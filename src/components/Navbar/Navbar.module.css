@@ -130,7 +130,7 @@
   text-align: left;
   padding-left: 74px;
   padding-right: 20px;
-  background: rgba(0, 0, 0, 0.3) url(/img/form.svg) 24px 28px no-repeat;
+  background: rgba(0, 0, 0, 0.3) url(/img/form.svg) 24px center no-repeat;
   cursor: pointer;
   white-space: nowrap;
   font-size: 14px;
