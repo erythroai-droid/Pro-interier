@@ -138,12 +138,20 @@ export default function Navbar() {
 
       {/* Мега-выпадающее меню "Виды потолков" */}
       <div className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuOpen : ""}`}>
-        <button 
-          className={styles.closeButton} 
-          onClick={() => setIsDropdownOpen(false)}
-          aria-label="Закрыть меню"
-        />
+        {/* Верхняя панель: Лого + Закрыть */}
+        <div className={styles.dropdownTopBar}>
+          <div className={styles.dropdownLogo} />
+          <button 
+            className={styles.dropdownClose} 
+            onClick={() => setIsDropdownOpen(false)}
+            aria-label="Закрыть меню"
+          >
+            закрыть меню <span className={styles.closeCross}>✕</span>
+          </button>
+        </div>
+
         <h2 className={styles.dropdownHeader}>Натяжные потолки под ключ</h2>
+        
         <div className={styles.dropdownContent}>
           {columns.map((col, index) => (
             <ul key={index}>
@@ -161,13 +169,23 @@ export default function Navbar() {
             </ul>
           ))}
         </div>
-        <div className={styles.dropdownPromo}>
-          <Link 
-            href="/ceilings/shumoizolyaciya-potolka" 
-            onClick={() => setIsDropdownOpen(false)}
-          >
-            Закажите звукоизоляцию потолка и получите скидку на натяжной потолок!
-          </Link>
+
+        {/* Бегущая строка внизу */}
+        <div className={styles.dropdownTicker}>
+          <div className={styles.tickerWrapper}>
+            <span className={styles.tickerText}>
+              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span className={styles.tickerText}>
+              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span className={styles.tickerText}>
+              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span className={styles.tickerText}>
+              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </div>
         </div>
       </div>
 
