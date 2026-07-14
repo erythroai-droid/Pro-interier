@@ -1,0 +1,183 @@
+.slideshowContainer {
+  max-width: 1170px;
+  position: relative;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slideActive {
+  display: block;
+  opacity: 1;
+}
+
+.inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.avatarWrapper {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.avatarWrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.textBlock {
+  flex-grow: 1;
+  padding-bottom: 50px;
+}
+
+.testimonial {
+  font-family: var(--font-pt-serif), serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0 50px 30px 0;
+  text-align: right;
+  position: relative;
+  line-height: 38px;
+}
+
+.testimonial::before {
+  content: '';
+  background: url(/img/quote_left.svg) no-repeat;
+  width: 32px;
+  height: 21px;
+  position: absolute;
+  left: -20px;
+  top: -10px;
+}
+
+.testimonial::after {
+  content: '';
+  background: url(/img/quote_right.svg) no-repeat;
+  width: 32px;
+  height: 21px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.name {
+  font-family: var(--font-pt-serif), serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.name span {
+  background-color: #ffc600;
+  padding: 2px 6px;
+  font-weight: 600;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+/* Кнопки навигации */
+.prev, .next {
+  display: block;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border: none;
+  background-color: transparent;
+}
+
+.prev:hover, .next:hover {
+  opacity: 1;
+}
+
+.prev {
+  left: -20px;
+  background: url(/img/left2.svg) no-repeat center;
+  background-size: contain;
+}
+
+.next {
+  right: -20px;
+  background: url(/img/right2.svg) no-repeat center;
+  background-size: contain;
+}
+
+/* Точки */
+.dotsContainer {
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.dotActive {
+  background-color: #ffc600;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .avatarWrapper {
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+  }
+  
+  .textBlock {
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  
+  .testimonial {
+    font-size: 20px;
+    padding-right: 20px;
+    line-height: 30px;
+  }
+  
+  .prev, .next {
+    width: 50px;
+    height: 50px;
+    top: 30%;
+  }
+  
+  .prev { left: -10px; }
+  .next { right: -10px; }
+}

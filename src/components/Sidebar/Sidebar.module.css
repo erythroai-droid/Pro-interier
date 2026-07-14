@@ -1,0 +1,124 @@
+.desktopSidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.desktopSidebar h6 {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffc600;
+  padding-bottom: 8px;
+}
+
+.desktopSidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
+  width: 210px;
+}
+
+.desktopSidebar ul:last-child {
+  border-bottom: none;
+}
+
+.desktopSidebar li a {
+  color: #000;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: none;
+}
+
+/* Мобильный аккордеон */
+.mobileAccordion {
+  display: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.accordionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.toggleIcon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-right: 5px;
+  margin-top: -4px;
+}
+
+.accordionTitleOpen .toggleIcon {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.accordionContentOpen {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.sidebarContent {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sidebarContent ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebarContent li a {
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .desktopSidebar {
+    display: none;
+  }
+  
+  .mobileAccordion {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebarContent {
+    grid-template-columns: 1fr;
+  }
+}

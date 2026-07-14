@@ -1,0 +1,673 @@
+/* Сброс стилей и базовые настройки */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-oswald), sans-serif;
+  background: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Сетки и контейнеры */
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.container_small {
+  display: inline-block;
+}
+
+/* Типографика */
+a {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 18px;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 120px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+h3 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+h4 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 30px;
+}
+
+h5 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 40px;
+  position: relative;
+  z-index: 20;
+}
+
+h6 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  z-index: 20;
+}
+
+p {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color: #000;
+  line-height: 36px;
+}
+
+/* Утилиты отступов */
+.top_20 { margin-top: 20px; }
+.top_30 { margin-top: 30px; }
+.bottom_15 { margin-bottom: 15px; }
+.bottom_30 { margin-bottom: 30px; }
+.bottom_50 { margin-bottom: 50px; }
+.left_270 { margin-left: 270px; }
+.left_180 { margin-left: 180px; }
+.right_30 { margin-right: 30px; }
+.left_30 { margin-left: 30px; }
+.right_20 { margin-right: 20px; }
+.left_20 { margin-left: 20px; }
+
+/* Общие эффекты */
+.underline {
+  position: relative;
+  color: #000;
+  font-weight: 300;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffc600;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.underline:hover::before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+/* Блоки лендинга (переписаны на Flexbox/Grid) */
+.block_01 {
+  background-color: #F4F4F4;
+  width: 100%;
+  padding: 50px 0 70px 0;
+}
+
+.block_01 .page_content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.block_01 .page_content p {
+  text-align: justify;
+  flex: 1;
+}
+
+.block_01 .page_image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Блок Ниша для штор */
+.block_02 {
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 66%, #ffc600 66%, #ffc600 100%);
+  width: 100%;
+  padding: 50px 0;
+}
+
+.block_02 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.block_02 .images {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.block_02 .img {
+  width: 270px;
+  height: 150px;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.block_02 .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.block_02 .hit::before {
+  content: '';
+  background: url(/img/hit.png) no-repeat;
+  display: block;
+  width: 113px;
+  height: 61px;
+  position: absolute;
+  top: -3px;
+  right: 0;
+  z-index: 10;
+}
+
+.block_02 .free {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+  margin: 15px 0 20px 0;
+  padding-left: 20px;
+  line-height: 30px;
+  background: linear-gradient(to right, rgba(255,198,0,1) 0%, rgba(255,198,0,1) 44%, rgba(255,199,5,0) 45%, rgba(255,255,255,0) 100%);
+}
+
+/* Блок 03 - Виды потолков */
+.block_03 {
+  background-color: #F4F4F4;
+  width: 100%;
+  padding: 50px 0 70px 0;
+}
+
+.block_03 .products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.block_03 .prd {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  padding: 0;
+}
+
+.block_03 .item, .block_03 .item2, .block_03 .item3, .block_03 .item4, .block_03 .item5 {
+  height: 400px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.block_03 .item:hover, .block_03 .item2:hover, .block_03 .item3:hover, .block_03 .item4:hover, .block_03 .item5:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
+}
+
+.block_03 .cloud {
+  position: relative;
+  transform: translateY(60px);
+  transition: transform 0.3s ease;
+}
+
+.block_03 .item:hover .cloud, 
+.block_03 .item2:hover .cloud, 
+.block_03 .item3:hover .cloud, 
+.block_03 .item4:hover .cloud, 
+.block_03 .item5:hover .cloud {
+  transform: translateY(0);
+}
+
+.block_03 .prd:nth-child(1) .item:nth-child(1) { background-image: url(/img/products/matovye-i-glyancivye.jpg); }
+.block_03 .prd:nth-child(1) .item:nth-child(2) { background-image: url(/img/products/tkanivye.jpg); }
+.block_03 .prd:nth-child(2) .item:nth-child(1) { background-image: url(/img/products/mnogourovnivye.jpg); }
+.block_03 .prd:nth-child(2) .item:nth-child(2) { background-image: url(/img/products/svetovoi.jpg); }
+.block_03 .item2:nth-child(1) { background-image: url(/img/products/paryashie.jpg); }
+.block_03 .item2:nth-child(2) { background-image: url(/img/products/tenevoi.jpg); }
+.block_03 .item3:nth-child(1) { background-image: url(/img/products/liniy.jpg); }
+.block_03 .item3:nth-child(2) { background-image: url(/img/products/podsvetka.jpg); }
+.block_03 .item4:nth-child(1) { background-image: url(/img/products/fotopechaty.jpg); }
+.block_03 .item4:nth-child(2) { background-image: url(/img/products/3D.jpg); }
+.block_03 .item5:nth-child(1) { background-image: url(/img/products/nebo.jpg); }
+.block_03 .item5:nth-child(2) { background-image: url(/img/products/zvukoizolyazia.jpg); }
+
+.block_03 h5 {
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.block_03 .description {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: none;
+  color: #fff;
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+
+.block_03 .price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFC600;
+}
+
+.block_03 .more {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #FFC600;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.block_03 .more:hover {
+  background: #F3400A;
+  color: #fff;
+}
+
+/* Рекламный блок */
+.block_03 .adv {
+  height: 70px;
+  width: 100%;
+  grid-column: 1 / -1;
+  background-color: #ffc600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.block_03 .adv a {
+  color: #000;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Блок 04 - Наша студия */
+.block_04 {
+  background: #fff url(/img/bg_03.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  padding: 70px 0;
+}
+
+.block_04 .page_content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.block_04 .page_content p {
+  text-align: justify;
+  flex: 1;
+}
+
+.block_04 .page_image {
+  max-width: 350px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Блок 05 - Отзывы */
+.block_05 {
+  background: linear-gradient(to right, #ffc600 0%, #ffc600 33%, #ffffff 33%, #ffffff 100%);
+  width: 100%;
+  padding: 70px 0 0 0;
+}
+
+/* Блок 06 - Footer */
+.block_06 {
+  background-color: #000;
+  width: 100%;
+  padding: 100px 0 70px 0;
+  position: relative;
+  color: #ffffff;
+}
+
+.block_06::before {
+  content: 'pro interier';
+  position: absolute;
+  transform: rotate(-90deg);
+  font-family: var(--font-oswald);
+  font-size: 64px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.05;
+  left: -80px;
+  top: 150px;
+}
+
+.block_06 .cashback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 100px 15px 50px;
+  background: #F3400A;
+  z-index: 10;
+}
+
+.block_06 .cashback h5 {
+  font-size: 24px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.block_06 .cashback .tel {
+  font-weight: 600;
+}
+
+.block_06 .cashback::after {
+  content: ' Звоните! ';
+  font-family: var(--font-oswald);
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 2px 20px;
+  position: absolute;
+  background: #000;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+}
+
+.block_06 .container2 {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1.2fr);
+  gap: 40px;
+}
+
+.block_06 .container2 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.block_06 .container2 ul li {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.block_06 .container2 ul li:first-child img {
+  max-width: 150px;
+}
+
+.block_06 .container2 a {
+  color: #fff;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.block_06 .container2 a:hover {
+  color: #FFC600;
+}
+
+.block_06 .payment-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+}
+
+.block_06 .payment {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.block_06 .payment img {
+  height: 24px;
+  opacity: 0.8;
+}
+
+.block_06 .social {
+  display: flex;
+  gap: 15px;
+}
+
+.block_06 .social a {
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.block_06 .social a:hover {
+  transform: scale(1.1);
+}
+
+.block_06 .fb { background-image: url(/img/social/facebook_white.svg); }
+.block_06 .fb:hover { background-image: url(/img/social/facebook.svg); }
+.block_06 .twit { background-image: url(/img/social/twitter_white.svg); }
+.block_06 .twit:hover { background-image: url(/img/social/twitter.svg); }
+.block_06 .vk { background-image: url(/img/social/vk_white.svg); }
+.block_06 .vk:hover { background-image: url(/img/social/vk.svg); }
+.block_06 .ok { background-image: url(/img/social/ok_white.svg); }
+.block_06 .ok:hover { background-image: url(/img/social/ok.svg); }
+.block_06 .in { background-image: url(/img/social/instagram_white.svg); }
+.block_06 .in:hover { background-image: url(/img/social/instagram.svg); }
+
+/* Заголовки с номерами */
+.number_header {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+span.number {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 144px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #E8E8E8;
+  line-height: 1;
+}
+
+span.number::after {
+  content: 'PRO INTERIER';
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #E8E8E8;
+  vertical-align: top;
+  line-height: 140px;
+  padding-left: 20px;
+}
+
+.number_header h3 {
+  position: absolute;
+  left: 190px;
+  bottom: 25px;
+}
+
+/* Блок 07 - Шапка для внутренних страниц */
+.block_07 {
+  background-color: #000;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block_07 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+/* Хлебные крошки */
+.bradcrumbs {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* Внутренний макет (сайдбар + контент) */
+.inner_content {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  margin-top: 35px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h6 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffc600;
+  padding-bottom: 8px;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom: 2px dotted rgba(0,0,0,.2);
+  padding: 15px 0;
+}
+
+.sidebar ul:last-child {
+  border-bottom: none;
+}
+
+.sidebar li a {
+  color: #000;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 1024px) {
+  .block_03 .products {
+    grid-template-columns: 1fr;
+  }
+  
+  .block_06 .container2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .block_02 .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .block_02 .images {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  h3 { font-size: 36px; }
+  h2 { font-size: 60px; }
+  
+  .block_01 .page_content {
+    flex-direction: column;
+  }
+  
+  .block_04 .page_content {
+    flex-direction: column;
+  }
+  
+  .inner_content {
+    grid-template-columns: 1fr;
+  }
+  
+  .number_header h3 {
+    position: static;
+    margin-top: -30px;
+    padding-left: 0;
+  }
+  
+  span.number {
+    font-size: 96px;
+  }
+  
+  span.number::after {
+    font-size: 40px;
+    line-height: 96px;
+  }
+}
