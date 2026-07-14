@@ -152,8 +152,8 @@ export default function Home() {
         </div>
 
         <div className="products">
-          {/* Рендерим сетку товаров */}
-          {products.map((prod) => (
+          {/* Первая строка карточек (4 штуки) */}
+          {products.slice(0, 4).map((prod) => (
             <div 
               key={prod.slug} 
               className="productCard"
@@ -176,6 +176,24 @@ export default function Home() {
               <TextAnimation text="дизайн потолков бесплатно!" />
             </Link>
           </div>
+
+          {/* Остальные карточки */}
+          {products.slice(4).map((prod) => (
+            <div 
+              key={prod.slug} 
+              className="productCard"
+              style={{ backgroundImage: `url(${prod.image})` }}
+            >
+              <div className="cloud">
+                <h5>{prod.title}</h5>
+                <div className="description">{prod.description}</div>
+                <div className="price">{prod.price}</div>
+                <Link href={`/ceilings/${prod.slug}`} className="more">
+                  подробнее
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
