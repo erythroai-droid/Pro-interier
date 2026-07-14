@@ -358,11 +358,20 @@ p {
   flex: 1;
 }
 
-.block_04 .page_image {
-  max-width: 350px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.block_04 .studio_images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+  flex-shrink: 0;
+}
+
+.block_04 .studio_image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 /* Блок 05 - Отзывы */
@@ -370,6 +379,16 @@ p {
   background: linear-gradient(to right, #ffc600 0%, #ffc600 33%, #ffffff 33%, #ffffff 100%);
   width: 100%;
   padding: 70px 0 0 0;
+}
+
+.block_05 span.number {
+  color: #000;
+  opacity: 0.1;
+}
+
+.block_05 span.number::after {
+  color: #000;
+  opacity: 0.5;
 }
 
 /* Блок 06 - Footer */
@@ -397,35 +416,42 @@ p {
 
 .block_06 .cashback {
   position: absolute;
-  top: 0;
+  top: -46px;
   right: 0;
-  padding: 15px 100px 15px 50px;
+  width: 430px;
+  padding: 15px 0 15px 30px;
   background: #F3400A;
   z-index: 10;
 }
 
 .block_06 .cashback h5 {
+  font-family: var(--font-oswald), sans-serif;
   font-size: 24px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: #fff;
+  font-weight: 500;
 }
 
 .block_06 .cashback .tel {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 24px;
   font-weight: 600;
+  color: #fff;
+  text-decoration: none;
 }
 
 .block_06 .cashback::after {
   content: ' Звоните! ';
   font-family: var(--font-oswald);
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
-  padding: 2px 20px;
+  padding: 1px 15px;
   position: absolute;
   background: #000;
   right: 0;
-  top: 100%;
+  top: 14px;
   z-index: 1;
 }
 
@@ -620,6 +646,23 @@ span.number::after {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .block_06 .cashback {
+    position: relative;
+    min-width: auto;
+    width: 100%;
+    padding: 15px 20px 45px 20px;
+    text-align: center;
+  }
+  
+  .block_06 .cashback::after {
+    position: absolute;
+    bottom: 10px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+  
   .block_02 {
     background: #ffffff;
   }
@@ -647,6 +690,18 @@ span.number::after {
     flex-direction: column;
   }
   
+  .block_04 .studio_images {
+    width: 100%;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .block_04 .studio_image {
+    flex: 1;
+    height: 180px;
+  }
+  
   .inner_content {
     grid-template-columns: 1fr;
   }
@@ -670,5 +725,9 @@ span.number::after {
 @media (max-width: 568px) {
   .block_03 .products {
     grid-template-columns: 1fr;
+  }
+  
+  .block_04 .studio_images {
+    flex-direction: column;
   }
 }
