@@ -149,32 +149,32 @@ export default function Home() {
             <span className="number">02</span>
             <h3>натяжные потолки со вкусом</h3>
           </div>
+        </div>
 
-          <div className="products">
-            {/* Рендерим сетку товаров */}
-            {products.map((prod) => (
-              <div 
-                key={prod.slug} 
-                className="productCard"
-                style={{ backgroundImage: `url(${prod.image})` }}
-              >
-                <div className="cloud">
-                  <h5>{prod.title}</h5>
-                  <div className="description">{prod.description}</div>
-                  <div className="price">{prod.price}</div>
-                  <Link href={`/ceilings/${prod.slug}`} className="more">
-                    подробнее
-                  </Link>
-                </div>
+        <div className="products">
+          {/* Рендерим сетку товаров */}
+          {products.map((prod) => (
+            <div 
+              key={prod.slug} 
+              className="productCard"
+              style={{ backgroundImage: `url(${prod.image})` }}
+            >
+              <div className="cloud">
+                <h5>{prod.title}</h5>
+                <div className="description">{prod.description}</div>
+                <div className="price">{prod.price}</div>
+                <Link href={`/ceilings/${prod.slug}`} className="more">
+                  подробнее
+                </Link>
               </div>
-            ))}
-
-            {/* Рекламный блок */}
-            <div className="adv">
-              <Link href="/discounts">
-                <TextAnimation text="дизайн потолков бесплатно!" />
-              </Link>
             </div>
+          ))}
+
+          {/* Рекламный блок */}
+          <div className="adv">
+            <Link href="/discounts">
+              <TextAnimation text="дизайн потолков бесплатно!" />
+            </Link>
           </div>
         </div>
       </section>

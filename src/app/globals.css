@@ -231,6 +231,7 @@ p {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
+  padding: 0 30px;
 }
 
 .block_03 .productCard {
@@ -604,7 +605,8 @@ span.number::after {
 /* Адаптивность для мобильных */
 @media (max-width: 1024px) {
   .block_03 .products {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
   }
   
   .block_06 .container2 {
@@ -655,5 +657,11 @@ span.number::after {
   span.number::after {
     font-size: 40px;
     line-height: 96px;
+  }
+}
+
+@media (max-width: 568px) {
+  .block_03 .products {
+    grid-template-columns: 1fr;
   }
 }
