@@ -24,6 +24,17 @@
   z-index: 2;
 }
 
+.slideExiting {
+  opacity: 1 !important;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.slideExiting .slideContent {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 /* Контент слайда */
 .slideContent {
   position: absolute;

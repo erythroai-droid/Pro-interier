@@ -179,7 +179,7 @@ export default function Slider() {
         return (
           <div
             key={slide.id}
-            className={`${styles.slide} ${isActive ? styles.slideActive : ""}`}
+            className={`${styles.slide} ${isActive ? styles.slideActive : ""} ${isExiting ? styles.slideExiting : ""}`}
           >
             {/* 3D Сплит фонового изображения */}
             <div
