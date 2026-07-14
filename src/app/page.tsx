@@ -123,23 +123,21 @@ export default function Home() {
       {/* Блок Акции - Ниша для штор */}
       <section className="block_02">
         <div className="container">
-          <div className="container_small left top_20">
+          <div className="container_small">
             <h4>Ниша для штор</h4>
             <p className="free">бесплатно!</p>
             <Link href="/ceilings/nisha-dlya-shtor-skrytaya" className="underline left_180">
               подробнее
             </Link>
           </div>
-          <div className="images">
-            <div className="img">
-              <img src="/img/1574075992_nisha-dlya-shtor.jpg" alt="Ниша для штор" />
-            </div>
-            <div className="img">
-              <img src="/img/1574075928_shtory-nisha.png" alt="Шторы в нише" />
-            </div>
-            <div className="img hit">
-              <img src="/img/1574076126_nishi-dlya-shtory.jpg" alt="Ниши для шторы хит" />
-            </div>
+          <div className="img">
+            <img src="/img/1574075992_nisha-dlya-shtor.jpg" alt="Ниша для штор" />
+          </div>
+          <div className="img">
+            <img src="/img/1574075928_shtory-nisha.png" alt="Шторы в нише" />
+          </div>
+          <div className="img hit">
+            <img src="/img/1574076126_nishi-dlya-shtory.jpg" alt="Ниши для шторы хит" />
           </div>
         </div>
       </section>
