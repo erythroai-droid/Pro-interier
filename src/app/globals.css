@@ -228,66 +228,41 @@ p {
 .block_03 .products {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
 }
 
-.block_03 .prd {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  padding: 0;
-}
-
-.block_03 .item, .block_03 .item2, .block_03 .item3, .block_03 .item4, .block_03 .item5 {
-  height: 400px;
+.block_03 .productCard {
+  height: 380px;
   background-color: #000;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 30px;
+  padding: 25px;
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: cover;
   background-position: center;
 }
 
-.block_03 .item:hover, .block_03 .item2:hover, .block_03 .item3:hover, .block_03 .item4:hover, .block_03 .item5:hover {
+.block_03 .productCard:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   transform: translateY(-5px);
 }
 
 .block_03 .cloud {
   position: relative;
-  transform: translateY(60px);
+  transform: translateY(55px);
   transition: transform 0.3s ease;
 }
 
-.block_03 .item:hover .cloud, 
-.block_03 .item2:hover .cloud, 
-.block_03 .item3:hover .cloud, 
-.block_03 .item4:hover .cloud, 
-.block_03 .item5:hover .cloud {
+.block_03 .productCard:hover .cloud {
   transform: translateY(0);
 }
-
-.block_03 .prd:nth-child(1) .item:nth-child(1) { background-image: url(/img/products/matovye-i-glyancivye.jpg); }
-.block_03 .prd:nth-child(1) .item:nth-child(2) { background-image: url(/img/products/tkanivye.jpg); }
-.block_03 .prd:nth-child(2) .item:nth-child(1) { background-image: url(/img/products/mnogourovnivye.jpg); }
-.block_03 .prd:nth-child(2) .item:nth-child(2) { background-image: url(/img/products/svetovoi.jpg); }
-.block_03 .item2:nth-child(1) { background-image: url(/img/products/paryashie.jpg); }
-.block_03 .item2:nth-child(2) { background-image: url(/img/products/tenevoi.jpg); }
-.block_03 .item3:nth-child(1) { background-image: url(/img/products/liniy.jpg); }
-.block_03 .item3:nth-child(2) { background-image: url(/img/products/podsvetka.jpg); }
-.block_03 .item4:nth-child(1) { background-image: url(/img/products/fotopechaty.jpg); }
-.block_03 .item4:nth-child(2) { background-image: url(/img/products/3D.jpg); }
-.block_03 .item5:nth-child(1) { background-image: url(/img/products/nebo.jpg); }
-.block_03 .item5:nth-child(2) { background-image: url(/img/products/zvukoizolyazia.jpg); }
 
 .block_03 h5 {
   color: #ffffff;
@@ -320,12 +295,20 @@ p {
   text-transform: uppercase;
   color: #000;
   margin-top: 15px;
-  border-radius: 4px;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .block_03 .more:hover {
   background: #F3400A;
   color: #fff;
+}
+
+.block_03 .productCard:hover .more {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Рекламный блок */

@@ -10,84 +10,84 @@ export default function Home() {
       description: "Матовая/сатиновая, лаковая фактура, классика",
       price: "от 280 р.м²",
       slug: "matovye-i-glyancivye-pvh",
-      itemClass: "item",
+      image: "/img/products/matovye-i-glyancivye.jpg",
     },
     {
       title: "Тканевые потолки",
       description: "Дескор(Descor) ткань полиэстр с полиуретаном. Все цвета",
       price: "от 960 р.м²",
       slug: "tkanevye-potolki",
-      itemClass: "item",
+      image: "/img/products/tkanivye.jpg",
     },
     {
       title: "Многоуровневые потолки",
       description: "В два и более уровня. Разные цвета, фактуры",
       price: "от 1850 пог.м",
       slug: "mnogourovnevye-potolki",
-      itemClass: "item",
+      image: "/img/products/mnogourovnivye.jpg",
     },
     {
       title: "Световой потолок",
       description: "Прозрачный потолок с подсветкой LED изнутри",
       price: "от 6800 р.м²",
       slug: "svetovye-led-potolki",
-      itemClass: "item",
+      image: "/img/products/svetovoi.jpg",
     },
     {
       title: "Парящий потолок",
       description: "Фигурный профиль с мягкой подсветкой LED по стенам",
       price: "от 950 пог.м",
       slug: "paryashie-potolki",
-      itemClass: "item2",
+      image: "/img/products/paryashie.jpg",
     },
     {
       title: "Теневой потолок",
       description: "Стильное теневое примыкание потолка к стене, черный профиль",
       price: "от 680 пог.м",
       slug: "tenevye-potolki",
-      itemClass: "item2",
+      image: "/img/products/tenevoi.jpg",
     },
     {
       title: "Световые линии",
       description: "Линии, полосы с LED освещением в уровень потолка",
       price: "от 1950 пог.м",
       slug: "svetovye-linii",
-      itemClass: "item3",
+      image: "/img/products/liniy.jpg",
     },
     {
       title: "Потолки с подсветкой LED",
       description: "Варианты освещения лентами LED",
       price: "от 650 пог.м",
       slug: "s-podsvetkoy-led",
-      itemClass: "item3",
+      image: "/img/products/podsvetka.jpg",
     },
     {
       title: "Фотопечать на потолке",
       description: "Рисунки, изображения, картины на потолке",
       price: "от 1850 р.м²",
       slug: "fotopechat-na-potolke",
-      itemClass: "item4",
+      image: "/img/products/fotopechaty.jpg",
     },
     {
       title: "3D натяжной потолок",
       description: "Потолок с 3D объемом, подсветкой LED, фотопечатью",
       price: "от 2200 р.м²",
       slug: "3d-potolki",
-      itemClass: "item4",
+      image: "/img/products/3D.jpg",
     },
     {
       title: "Небо на потолке",
       description: "Натяжной потолок с фотопечатью Небо и облаков, варианты",
       price: "от 1850 р.м²",
       slug: "nebo-s-oblakami",
-      itemClass: "item5",
+      image: "/img/products/nebo.jpg",
     },
     {
       title: "Звукоизоляция под натяжной потолок",
       description: "Комплекс защиты от шумных соседей",
       price: "от 1400 р.м²",
       slug: "shumoizolyaciya-potolka",
-      itemClass: "item5",
+      image: "/img/products/zvukoizolyazia.jpg",
     },
   ];
 
@@ -152,8 +152,12 @@ export default function Home() {
 
           <div className="products">
             {/* Рендерим сетку товаров */}
-            {products.map((prod, index) => (
-              <div key={prod.slug} className={prod.itemClass}>
+            {products.map((prod) => (
+              <div 
+                key={prod.slug} 
+                className="productCard"
+                style={{ backgroundImage: `url(${prod.image})` }}
+              >
                 <div className="cloud">
                   <h5>{prod.title}</h5>
                   <div className="description">{prod.description}</div>
