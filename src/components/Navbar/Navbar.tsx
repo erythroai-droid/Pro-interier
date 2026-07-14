@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import TextAnimation from "@/components/TextAnimation/TextAnimation";
 import styles from "./Navbar.module.css";
 
 interface MenuCategory {
@@ -170,22 +171,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Бегущая строка внизу */}
-        <div className={styles.dropdownTicker}>
-          <div className={styles.tickerWrapper}>
-            <span className={styles.tickerText}>
-              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span className={styles.tickerText}>
-              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span className={styles.tickerText}>
-              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span className={styles.tickerText}>
-              Закажите звукоизоляцию потолка и получите скидку на натяжной потолок! &nbsp;&nbsp;&nbsp;&nbsp; ★ &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-          </div>
+        {/* Реклама внизу */}
+        <div className={styles.dropdownPromo}>
+          <Link 
+            href="/ceilings/shumoizolyaciya-potolka" 
+            onClick={() => setIsDropdownOpen(false)}
+          >
+            <TextAnimation text="Закажите звукоизоляцию потолка и получите скидку на натяжной потолок!" />
+          </Link>
         </div>
       </div>
 
