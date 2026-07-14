@@ -161,7 +161,7 @@ p {
 
 /* Блок Ниша для штор */
 .block_02 {
-  background: linear-gradient(to right, #ffffff calc(50% + 315px), #ffc600 calc(50% + 315px));
+  background: linear-gradient(to right, #ffffff calc(50% + 330px), #ffc600 calc(50% + 330px));
   width: 100%;
   padding: 50px 0;
 }
