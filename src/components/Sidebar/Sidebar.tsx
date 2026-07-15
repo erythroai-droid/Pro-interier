@@ -14,48 +14,48 @@ export default function Sidebar() {
 
   const columns: SidebarCategory[][] = [
     [
-      { title: "Матовые и глянцевые пвх", slug: "matovye-i-glyancivye-pvh" },
-      { title: "Тканевые потолки", slug: "tkanevye-potolki" },
-      { title: "Многоуровневые потолки", slug: "mnogourovnevye-potolki" },
-      { title: "Фотопечать на потолке", slug: "fotopechat-na-potolke" },
-      { title: "Небо с облаками", slug: "nebo-s-oblakami" },
-      { title: "Витраж на потолок", slug: "vitrazh-na-potolok" },
+      { title: "Matte & Glossy PVC", slug: "matovye-i-glyancivye-pvh" },
+      { title: "Fabric Ceilings", slug: "tkanevye-potolki" },
+      { title: "Multi-level Ceilings", slug: "mnogourovnevye-potolki" },
+      { title: "Photo Printed Ceilings", slug: "fotopechat-na-potolke" },
+      { title: "Sky with Clouds", slug: "nebo-s-oblakami" },
+      { title: "Stained Glass Ceilings", slug: "vitrazh-na-potolok" },
     ],
     [
-      { title: "Парящие потолки", slug: "paryashie-potolki" },
-      { title: "Теневые потолки", slug: "tenevye-potolki" },
-      { title: "Световые Led потолки", slug: "svetovye-led-potolki" },
-      { title: "Световые линии", slug: "svetovye-linii" },
-      { title: "С подсветкой Led", slug: "s-podsvetkoy-led" },
-      { title: "3D потолки", slug: "3d-potolki" },
+      { title: "Floating Ceilings", slug: "paryashie-potolki" },
+      { title: "Shadow Ceilings", slug: "tenevye-potolki" },
+      { title: "Luminous LED Ceilings", slug: "svetovye-led-potolki" },
+      { title: "Light Lines", slug: "svetovye-linii" },
+      { title: "With LED Backlight", slug: "s-podsvetkoy-led" },
+      { title: "3D Ceilings", slug: "3d-potolki" },
     ],
     [
-      { title: "В квартире", slug: "v-kvartire" },
-      { title: "В загороднем доме", slug: "v-zagorodnem-dome" },
-      { title: "В басcеине", slug: "v-basseine" },
-      { title: "В детской комнате", slug: "v-detskoy-komnate" },
-      { title: "В кухне", slug: "v-kuhne" },
-      { title: "В ванне", slug: "v-vanne" },
+      { title: "In Apartment", slug: "v-kvartire" },
+      { title: "In Country House", slug: "v-zagorodnem-dome" },
+      { title: "In Swimming Pool", slug: "v-basseine" },
+      { title: "In Kids Room", slug: "v-detskoy-komnate" },
+      { title: "In Kitchen", slug: "v-kuhne" },
+      { title: "In Bathroom", slug: "v-vanne" },
     ],
     [
-      { title: "Ниша для штор скрытая", slug: "nisha-dlya-shtor-skrytaya" },
-      { title: "Шумоизоляция потолка", slug: "shumoizolyaciya-potolka" },
-      { title: "Светильники для потолка", slug: "svetilniki-dlya-potolka" },
-      { title: "Фото наших работ", slug: "foto-nashih-rabot" },
-      { title: "Цены на монтаж потолков", slug: "ceny-na-montazh-potolkov" },
-      { title: "Скидки и акции", slug: "skidki-i-akcii" },
+      { title: "Hidden Curtain Niche", slug: "nisha-dlya-shtor-skrytaya" },
+      { title: "Ceiling Soundproofing", slug: "shumoizolyaciya-potolka" },
+      { title: "Ceiling Spotlights", slug: "svetilniki-dlya-potolka" },
+      { title: "Our Portfolio", slug: "foto-nashih-rabot" },
+      { title: "Installation Prices", slug: "ceny-na-montazh-potolkov" },
+      { title: "Discounts & Offers", slug: "skidki-i-akcii" },
     ],
   ];
 
   return (
     <>
-      {/* Аккордеон для мобильных (отображается только на мобильных) */}
+      {/* Mobile Accordion (visible on mobile only) */}
       <div className={styles.mobileAccordion}>
         <button 
           className={`${styles.accordionTitle} ${isOpen ? styles.accordionTitleOpen : ""}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          Виды потолков
+          Ceiling Types
           <span className={styles.toggleIcon} />
         </button>
         <div className={`${styles.accordionContent} ${isOpen ? styles.accordionContentOpen : ""}`}>
@@ -75,9 +75,9 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Сайдбар для десктопа */}
+      {/* Desktop Sidebar */}
       <div className={styles.desktopSidebar}>
-        <h6 className="bottom_30">Виды потолков</h6>
+        <h6 className="bottom_30">Ceiling Types</h6>
         {columns.map((col, cIdx) => (
           <ul key={cIdx}>
             {col.map((item) => (

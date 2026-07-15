@@ -20,9 +20,9 @@ const ptSerif = PT_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Потолочный Pro_interier | Натяжные потолки под ключ в Москве и МО",
-  description: "Официальный сайт студии Потолочный PRO Интерьер. Установка натяжных потолков любой сложности: матовые, глянцевые, тканевые, многоуровневые, световые линии.",
-  keywords: "натяжные потолки, установка потолков, матовые потолки, тканевые потолки, световые линии, Pro-interier, Москва, Московская область",
+  title: "Ceiling Pro_interier | Turnkey Stretch Ceilings in Moscow and Moscow Region",
+  description: "Official website of the Ceiling PRO Interior studio. Installation of stretch ceilings of any complexity: matte, glossy, fabric, multi-level, light lines.",
+  keywords: "stretch ceilings, ceiling installation, matte ceilings, fabric ceilings, light lines, Pro-interier, Moscow, Moscow region",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${oswald.variable} ${ptSerif.variable}`}>
+    <html lang="en" className={`${oswald.variable} ${ptSerif.variable}`}>
       <body>
         <Navbar />
         {children}

@@ -9,28 +9,28 @@ interface PageProps {
   }>;
 }
 
-// Генерация статических параметров для пререндеринга всех страниц при сборке
+// Generate static params for prerendering all pages at build time
 export async function generateStaticParams() {
   return Object.keys(ceilingsData).map((slug) => ({
     slug,
   }));
 }
 
-// Динамические SEO-метаданные для каждой категории потолков
+// Dynamic SEO metadata for each ceiling category
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const data = ceilingsData[slug];
 
   if (!data) {
     return {
-      title: "Страница не найдена | Потолочный Pro_interier",
+      title: "Page Not Found | Ceiling Pro_interier",
     };
   }
 
   return {
-    title: `${data.title} под ключ в Москве и МО | Студия Pro_interier`,
-    description: `Закажите профессиональный монтаж по направлению: ${data.title}. Выезд замерщика бесплатно, официальная гарантия, работаем в Москве и Московской области.`,
-    keywords: `${data.breadcrumb.toLowerCase()}, натяжные потолки, Pro-interier, дизайн потолка, монтаж потолков`,
+    title: `${data.title} Turnkey in Moscow and Moscow Region | Pro_interier Studio`,
+    description: `Order professional installation for: ${data.title}. Free visit of the measurement engineer, official warranty, we work in Moscow and Moscow region.`,
+    keywords: `${data.breadcrumb.toLowerCase()}, stretch ceilings, Pro-interier, ceiling design, ceiling installation`,
   };
 }
 
@@ -38,34 +38,34 @@ export default async function CeilingPage({ params }: PageProps) {
   const { slug } = await params;
   const data = ceilingsData[slug];
 
-  // Если slug не найден в нашей базе данных
+  // If slug is not found in database
   if (!data) {
     notFound();
   }
 
   return (
     <main>
-      {/* Баннер страницы */}
+      {/* Page Banner */}
       <div className="block_07">
         <img 
           src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.jpg" 
-          alt="Баннер Студия Потолочный PRO Интерьер" 
+          alt="Banner Ceiling PRO Interior Studio" 
         />
       </div>
 
-      {/* Основной контент */}
+      {/* Main Content */}
       <section className="block_01">
         <div className="container">
-          {/* Хлебные крошки */}
+          {/* Breadcrumbs */}
           <div className="bradcrumbs">
-            Натяжные потолки » {data.breadcrumb}
+            Stretch Ceilings » {data.breadcrumb}
           </div>
 
           <div className="bottom_30">
             <h3 className="inner_header">{data.title}</h3>
           </div>
 
-          {/* Сетка: Сайдбар + Контент */}
+          {/* Grid: Sidebar + Content */}
           <div className="inner_content">
             <Sidebar />
 
@@ -79,9 +79,9 @@ export default async function CeilingPage({ params }: PageProps) {
               <p style={{ textAlign: "justify" }}>
                 {data.content}
                 <br /><br />
-                Студия натяжных потолков «Потолочный PRO Интерьер» гарантирует качественное выполнение всех этапов работ: от бесплатного профессионального замера до монтажа полотна любой сложности. В работе мы используем только сертифицированные полотна от проверенных европейских и отечественных производителей, современные профильные системы и взрывобезопасное композитное оборудование. 
+                Stretch Ceiling Studio 'Ceiling PRO Interior' guarantees high-quality execution of all stages of work: from free professional measurement to installation of ceilings of any complexity. In our work we use only certified canvases from proven European and domestic manufacturers, modern profile systems, and explosion-safe composite equipment.
                 <br /><br />
-                Установка натяжных потолков проходит быстро, чисто и в согласованные сроки. Мы дорожим своей репутацией, поэтому предоставляем официальную гарантию на все виды материалов и монтажные работы. Свяжитесь с нами прямо сейчас, чтобы получить точный расчет стоимости вашего потолка и заказать бесплатный выезд инженера-замерщика.
+                Installation of stretch ceilings is fast, clean, and within the agreed timeline. We value our reputation, which is why we provide an official warranty on all types of materials and installation work. Contact us right now to get an exact calculation of your ceiling cost and order a free visit from our measurement engineer.
               </p>
               <div style={{ clear: "both" }} />
             </div>

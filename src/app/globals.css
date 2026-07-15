@@ -215,7 +215,7 @@ p {
   margin: 15px 0 20px 0;
   padding-left: 100px;
   line-height: 30px;
-  background: linear-gradient(to right, rgba(255,198,0,1) 0%, rgba(255,198,0,1) 44%, rgba(255,199,5,0) 45%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, #ffc600 0% 43%, #ffc70500 43%, #fff0 100%);
 }
 
 /* Блок 03 - Виды потолков */
@@ -418,7 +418,7 @@ p {
   position: absolute;
   top: -46px;
   right: 0;
-  width: 430px;
+  width: max-content;
   padding: 15px 0 15px 30px;
   background: #F3400A;
   z-index: 10;
@@ -440,19 +440,21 @@ p {
   text-decoration: none;
 }
 
-.block_06 .cashback::after {
-  content: ' Звоните! ';
+.block_06 .cashback h5 span::after {
+  content: 'Call us!';
   font-family: var(--font-oswald);
   font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
-  padding: 1px 15px;
-  position: absolute;
+  padding: 4px 15px 5px 15px;
   background: #000;
-  right: 0;
-  top: 14px;
-  z-index: 1;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  position: relative;
+  top: -4px;
 }
 
 .block_06 .container2 {

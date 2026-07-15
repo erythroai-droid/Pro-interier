@@ -10,7 +10,7 @@
   animation: letterAnim 7s infinite;
 }
 
-/* Пробел должен сохранять ширину */
+/* Space character should preserve its width */
 .letterSpace {
   display: inline-block;
   width: 0.25em;
@@ -21,12 +21,12 @@
     transform: translate3d(40px, 0, 0);
     opacity: 0;
   }
-  /* Влет буквы */
+  /* Letter slide in */
   8%, 45% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
-  /* Вылет буквы */
+  /* Letter slide out */
   53%, 100% {
     transform: translate3d(-30px, 0, 0);
     opacity: 0;

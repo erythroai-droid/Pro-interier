@@ -18,25 +18,25 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     image: "/img/testimonials/Kai.png",
-    text: "Спасибо студии за отличную работу. Рекомендую!",
-    nameFirst: "Кай",
-    nameLast: "Метов",
+    text: "Thank you to the studio for the excellent work. Recommended!",
+    nameFirst: "Kai",
+    nameLast: "Metov",
   },
   {
     id: 2,
     image: "/img/testimonials/Konchlovsky.png",
-    text: "Получилось уютно и светло! Спасибо за труд!",
-    nameFirst: "Андрей",
-    nameLast: "Кончаловский",
-    nameFirst2: "Юлия",
-    nameLast2: "Высоцкая",
+    text: "It turned out cozy and bright! Thank you for your work!",
+    nameFirst: "Andrey",
+    nameLast: "Konchalovsky",
+    nameFirst2: "Yulia",
+    nameLast2: "Vysotskaya",
   },
   {
     id: 3,
     image: "/img/testimonials/Nikolaev.png",
-    text: "Благодарю за качественную работу, все понравилось!",
-    nameFirst: "Валерий",
-    nameLast: "Николаев",
+    text: "Thank you for the high-quality work, liked everything!",
+    nameFirst: "Valery",
+    nameLast: "Nikolaev",
   },
 ];
 
@@ -65,11 +65,11 @@ export default function Reviews() {
             className={`${styles.slide} ${isActive ? styles.slideActive : ""}`}
           >
             <div className={styles.inner}>
-              {/* Фото */}
+              {/* Photo */}
               <div className={styles.avatarWrapper}>
                 <img src={item.image} alt={`${item.nameFirst} ${item.nameLast}`} />
               </div>
-              {/* Текст отзыва */}
+              {/* Testimonial Text */}
               <div className={styles.textBlock}>
                 <p className={styles.testimonial}>{item.text}</p>
                 <p className={styles.name}>
@@ -77,13 +77,13 @@ export default function Reviews() {
                   {item.nameFirst2 && (
                     <>
                       <br />
-                      и {item.nameFirst2} <span>{item.nameLast2}</span>
+                      and {item.nameFirst2} <span>{item.nameLast2}</span>
                     </>
                   )}
                 </p>
                 <p className={`${styles.alignRight} bottom_50`}>
                   <Link href="/reviews" className="underline">
-                    подробнее
+                    details
                   </Link>
                 </p>
               </div>
@@ -92,18 +92,18 @@ export default function Reviews() {
         );
       })}
 
-      {/* Кнопки влево/вправо */}
-      <button className={styles.prev} onClick={prevSlide} aria-label="Предыдущий отзыв" />
-      <button className={styles.next} onClick={nextSlide} aria-label="Следующий отзыв" />
+      {/* Prev/Next buttons */}
+      <button className={styles.prev} onClick={prevSlide} aria-label="Previous review" />
+      <button className={styles.next} onClick={nextSlide} aria-label="Next review" />
 
-      {/* Индикаторы (dots) */}
+      {/* Indicators (dots) */}
       <div className={styles.dotsContainer}>
         {testimonials.map((_, idx) => (
           <button
             key={idx}
             className={`${styles.dot} ${idx === current ? styles.dotActive : ""}`}
             onClick={() => setSlide(idx)}
-            aria-label={`Перейти к отзыву ${idx + 1}`}
+            aria-label={`Go to review ${idx + 1}`}
           />
         ))}
       </div>

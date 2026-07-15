@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import TextAnimation from "@/components/TextAnimation/TextAnimation";
+import CalculatorModal from "@/components/CalculatorModal/CalculatorModal";
+import RequestModal from "@/components/RequestModal/RequestModal";
 import styles from "./Navbar.module.css";
 
 interface MenuCategory {
@@ -14,6 +16,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const [isRequestOpen, setIsRequestOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +29,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Инициализировать состояние при монтировании
+    // Initialize state on mount
     handleScroll();
 
     return () => {
@@ -45,36 +49,36 @@ export default function Navbar() {
 
   const columns: MenuCategory[][] = [
     [
-      { title: "Матовые и глянцевые пвх", slug: "matovye-i-glyancivye-pvh" },
-      { title: "Тканевые потолки", slug: "tkanevye-potolki" },
-      { title: "Многоуровневые потолки", slug: "mnogourovnevye-potolki" },
-      { title: "Фотопечать на потолке", slug: "fotopechat-na-potolke" },
-      { title: "Небо с облаками", slug: "nebo-s-oblakami" },
-      { title: "Витраж на потолок", slug: "vitrazh-na-potolok" },
+      { title: "Matte & Glossy PVC", slug: "matovye-i-glyancivye-pvh" },
+      { title: "Fabric Ceilings", slug: "tkanevye-potolki" },
+      { title: "Multi-level Ceilings", slug: "mnogourovnevye-potolki" },
+      { title: "Photo Printed Ceilings", slug: "fotopechat-na-potolke" },
+      { title: "Sky with Clouds", slug: "nebo-s-oblakami" },
+      { title: "Stained Glass Ceilings", slug: "vitrazh-na-potolok" },
     ],
     [
-      { title: "Парящие потолки", slug: "paryashie-potolki" },
-      { title: "Теневые потолки", slug: "tenevye-potolki" },
-      { title: "Световые Led потолки", slug: "svetovye-led-potolki" },
-      { title: "Световые линии", slug: "svetovye-linii" },
-      { title: "С подсветкой Led", slug: "s-podsvetkoy-led" },
-      { title: "3D потолки", slug: "3d-potolki" },
+      { title: "Floating Ceilings", slug: "paryashie-potolki" },
+      { title: "Shadow Ceilings", slug: "tenevye-potolki" },
+      { title: "Luminous LED Ceilings", slug: "svetovye-led-potolki" },
+      { title: "Light Lines", slug: "svetovye-linii" },
+      { title: "With LED Backlight", slug: "s-podsvetkoy-led" },
+      { title: "3D Ceilings", slug: "3d-potolki" },
     ],
     [
-      { title: "В квартире", slug: "v-kvartire" },
-      { title: "В загороднем доме", slug: "v-zagorodnem-dome" },
-      { title: "В басcеине", slug: "v-basseine" },
-      { title: "В детской комнате", slug: "v-detskoy-komnate" },
-      { title: "В кухне", slug: "v-kuhne" },
-      { title: "В ванне", slug: "v-vanne" },
+      { title: "In Apartment", slug: "v-kvartire" },
+      { title: "In Country House", slug: "v-zagorodnem-dome" },
+      { title: "In Swimming Pool", slug: "v-basseine" },
+      { title: "In Kids Room", slug: "v-detskoy-komnate" },
+      { title: "In Kitchen", slug: "v-kuhne" },
+      { title: "In Bathroom", slug: "v-vanne" },
     ],
     [
-      { title: "Ниша для штор скрытая", slug: "nisha-dlya-shtor-skrytaya" },
-      { title: "Шумоизоляция потолка", slug: "shumoizolyaciya-potolka" },
-      { title: "Светильники для потолка", slug: "svetilniki-dlya-potolka" },
-      { title: "Фото наших работ", slug: "foto-nashih-rabot" },
-      { title: "Цены на монтаж потолков", slug: "ceny-na-montazh-potolkov" },
-      { title: "Скидки и акции", slug: "skidki-i-akcii" },
+      { title: "Hidden Curtain Niche", slug: "nisha-dlya-shtor-skrytaya" },
+      { title: "Ceiling Soundproofing", slug: "shumoizolyaciya-potolka" },
+      { title: "Ceiling Spotlights", slug: "svetilniki-dlya-potolka" },
+      { title: "Our Portfolio", slug: "foto-nashih-rabot" },
+      { title: "Installation Prices", slug: "ceny-na-montazh-potolkov" },
+      { title: "Discounts & Offers", slug: "skidki-i-akcii" },
     ],
   ];
 
@@ -83,52 +87,60 @@ export default function Navbar() {
       <div className={`${styles.navbar} ${isScrolled ? styles.menuScrolled : ""}`}>
         <Link href="/" className={styles.logo} aria-label="Pro Interier Logo" />
 
-        {/* Раздел Виды потолков */}
+        {/* Ceiling Types Section */}
         <div className={styles.menuArea}>
           <div className={styles.kind} onClick={toggleDropdown}>
-            виды потолков
+            ceiling types
             <span className={`${styles.openIcon} ${isDropdownOpen ? styles.openIconActive : ""}`} />
           </div>
         </div>
 
-        {/* Десктопное горизонтальное меню */}
+        {/* Desktop horizontal menu */}
         <div className={`${styles.menu} ${isScrolled ? styles.menuScrolled : ""}`}>
           <ul className={styles.menuList}>
             <li className={styles.menuItem}>
-              <Link href="/about" className="underline">о компании</Link>
+              <Link href="/about" className="underline">about us</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link href="/portfolio" className="underline">наши работы</Link>
+              <Link href="/portfolio" className="underline">our works</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link href="/prices" className="underline">цены</Link>
+              <Link href="/prices" className="underline">prices</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link href="/discounts" className="underline">скидки</Link>
+              <Link href="/discounts" className="underline">discounts</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link href="/contacts" className="underline">контакты</Link>
+              <Link href="/contacts" className="underline">contacts</Link>
             </li>
           </ul>
         </div>
 
-        {/* Кнопка Калькулятор */}
+        {/* Ceiling Calculator Button */}
         <Link 
           href="/calculator" 
           className={`${styles.calculator} ${isScrolled ? styles.calculatorScrolled : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsCalculatorOpen(true);
+          }}
         >
-          калькулятор потолков
+          ceiling calculator
         </Link>
 
-        {/* Кнопка Оставить заявку */}
+        {/* Leave Request Button */}
         <Link 
           href="/request" 
           className={`${styles.feedback} ${isScrolled ? styles.feedbackScrolled : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsRequestOpen(true);
+          }}
         >
-          оставить заявку
+          leave request
         </Link>
 
-        {/* Мобильная кнопка бургера */}
+        {/* Mobile burger button */}
         <div 
           className={`${styles.hamburger} ${isScrolled ? styles.hamburgerScrolled : ""} ${isMobileMenuOpen ? styles.burgerActive : ""}`}
           onClick={toggleMobileMenu}
@@ -137,21 +149,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Мега-выпадающее меню "Виды потолков" */}
+      {/* Mega dropdown menu "Ceiling Types" */}
       <div className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuOpen : ""}`}>
-        {/* Верхняя панель: Лого + Закрыть */}
+        {/* Top panel: Logo + Close */}
         <div className={styles.dropdownTopBar}>
           <div className={styles.dropdownLogo} />
           <button 
             className={styles.dropdownClose} 
             onClick={() => setIsDropdownOpen(false)}
-            aria-label="Закрыть меню"
+            aria-label="Close menu"
           >
-            закрыть меню <span className={styles.closeCross}>✕</span>
+            close menu <span className={styles.closeCross}>✕</span>
           </button>
         </div>
 
-        <h2 className={styles.dropdownHeader}>Натяжные потолки под ключ</h2>
+        <h2 className={styles.dropdownHeader}>Turnkey Stretch Ceilings</h2>
         
         <div className={styles.dropdownContent}>
           {columns.map((col, index) => (
@@ -171,46 +183,69 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Реклама внизу */}
+        {/* Promo banner at bottom */}
         <div className={styles.dropdownPromo}>
           <Link 
             href="/ceilings/shumoizolyaciya-potolka" 
             onClick={() => setIsDropdownOpen(false)}
           >
-            <TextAnimation text="Закажите звукоизоляцию потолка и получите скидку на натяжной потолок!" />
+            <TextAnimation text="Order soundproofing and get a discount on your stretch ceiling!" />
           </Link>
         </div>
       </div>
 
-      {/* Мобильное выпадающее меню */}
+      {/* Mobile dropdown menu */}
       <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}>
         <ul>
           <li>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>о компании</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>about us</Link>
           </li>
           <li>
-            <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>наши работы</Link>
+            <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>our works</Link>
           </li>
           <li>
-            <Link href="/prices" onClick={() => setIsMobileMenuOpen(false)}>цены</Link>
+            <Link href="/prices" onClick={() => setIsMobileMenuOpen(false)}>prices</Link>
           </li>
           <li>
-            <Link href="/discounts" onClick={() => setIsMobileMenuOpen(false)}>скидки</Link>
+            <Link href="/discounts" onClick={() => setIsMobileMenuOpen(false)}>discounts</Link>
           </li>
           <li>
-            <Link href="/contacts" onClick={() => setIsMobileMenuOpen(false)}>контакты</Link>
+            <Link href="/contacts" onClick={() => setIsMobileMenuOpen(false)}>contacts</Link>
           </li>
         </ul>
         <div className={styles.mobileMenuDivider} />
         <div className={styles.mobileMenuButtons}>
-          <Link href="/calculator" onClick={() => setIsMobileMenuOpen(false)}>
-            калькулятор потолков
+          <Link 
+            href="/calculator" 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMobileMenuOpen(false);
+              setIsCalculatorOpen(true);
+            }}
+          >
+            ceiling calculator
           </Link>
-          <Link href="/request" onClick={() => setIsMobileMenuOpen(false)}>
-            оставить заявку на замер
+          <Link 
+            href="/request" 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMobileMenuOpen(false);
+              setIsRequestOpen(true);
+            }}
+          >
+            book a measurement
           </Link>
         </div>
       </div>
+
+      <CalculatorModal 
+        isOpen={isCalculatorOpen} 
+        onClose={() => setIsCalculatorOpen(false)} 
+      />
+      <RequestModal 
+        isOpen={isRequestOpen} 
+        onClose={() => setIsRequestOpen(false)} 
+      />
     </>
   );
 }

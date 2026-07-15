@@ -7,13 +7,13 @@ interface TextAnimationProps {
 }
 
 export default function TextAnimation({ text }: TextAnimationProps) {
-  // Разделяем строку на отдельные символы
+  // Split the string into individual characters
   const chars = text.split("");
 
   return (
     <span className={styles.textContainer}>
       {chars.map((char, index) => {
-        // Если символ - пробел, рендерим специальный класс, сохраняющий ширину
+        // If character is a space, render a special class that preserves width
         if (char === " ") {
           return <span key={index} className={styles.letterSpace} />;
         }

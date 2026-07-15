@@ -3,45 +3,45 @@ import Link from "next/link";
 export default function Footer() {
   const columns = [
     [
-      { title: "Матовые и глянцевые пвх", slug: "matovye-i-glyancivye-pvh" },
-      { title: "Тканевые потолки", slug: "tkanevye-potolki" },
-      { title: "Многоуровневые потолки", slug: "mnogourovnevye-potolki" },
-      { title: "Фотопечать на потолке", slug: "fotopechat-na-potolke" },
-      { title: "Небо с облаками", slug: "nebo-s-oblakami" },
-      { title: "Витраж на потолок", slug: "vitrazh-na-potolok" },
+      { title: "Matte & Glossy PVC", slug: "matovye-i-glyancivye-pvh" },
+      { title: "Fabric Ceilings", slug: "tkanevye-potolki" },
+      { title: "Multi-level Ceilings", slug: "mnogourovnevye-potolki" },
+      { title: "Photo Printed Ceilings", slug: "fotopechat-na-potolke" },
+      { title: "Sky with Clouds", slug: "nebo-s-oblakami" },
+      { title: "Stained Glass Ceilings", slug: "vitrazh-na-potolok" },
     ],
     [
-      { title: "Парящие потолки", slug: "paryashie-potolki" },
-      { title: "Теневые потолки", slug: "tenevye-potolki" },
-      { title: "Световые Led потолки", slug: "svetovye-led-potolki" },
-      { title: "Световые линии", slug: "svetovye-linii" },
-      { title: "С подсветкой Led", slug: "s-podsvetkoy-led" },
-      { title: "3D потолки", slug: "3d-potolki" },
+      { title: "Floating Ceilings", slug: "paryashie-potolki" },
+      { title: "Shadow Ceilings", slug: "tenevye-potolki" },
+      { title: "Luminous LED Ceilings", slug: "svetovye-led-potolki" },
+      { title: "Light Lines", slug: "svetovye-linii" },
+      { title: "With LED Backlight", slug: "s-podsvetkoy-led" },
+      { title: "3D Ceilings", slug: "3d-potolki" },
     ],
     [
-      { title: "В квартире", slug: "v-kvartire" },
-      { title: "В загороднем доме", slug: "v-zagorodnem-dome" },
-      { title: "В басcеине", slug: "v-basseine" },
-      { title: "В детской комнате", slug: "v-detskoy-komnate" },
-      { title: "В кухне", slug: "v-kuhne" },
-      { title: "В ванне", slug: "v-vanne" },
+      { title: "In Apartment", slug: "v-kvartire" },
+      { title: "In Country House", slug: "v-zagorodnem-dome" },
+      { title: "In Swimming Pool", slug: "v-basseine" },
+      { title: "In Kids Room", slug: "v-detskoy-komnate" },
+      { title: "In Kitchen", slug: "v-kuhne" },
+      { title: "In Bathroom", slug: "v-vanne" },
     ],
     [
-      { title: "Ниша для штор скрытая", slug: "nisha-dlya-shtor-skrytaya" },
-      { title: "Шумоизоляция потолка", slug: "shumoizolyaciya-potolka" },
-      { title: "Светильники для потолка", slug: "svetilniki-dlya-potolka" },
-      { title: "Фото наших работ", slug: "foto-nashih-rabot" },
-      { title: "Цены на монтаж потолков", slug: "ceny-na-montazh-potolkov" },
-      { title: "Скидки и акции", slug: "skidki-i-akcii" },
+      { title: "Hidden Curtain Niche", slug: "nisha-dlya-shtor-skrytaya" },
+      { title: "Ceiling Soundproofing", slug: "shumoizolyaciya-potolka" },
+      { title: "Ceiling Spotlights", slug: "svetilniki-dlya-potolka" },
+      { title: "Our Portfolio", slug: "foto-nashih-rabot" },
+      { title: "Installation Prices", slug: "ceny-na-montazh-potolkov" },
+      { title: "Discounts & Offers", slug: "skidki-i-akcii" },
     ],
   ];
 
   return (
     <footer className="block_06">
-      {/* Кэшбэк плашка */}
+      {/* Cashback badge */}
       <div className="cashback">
         <h5>
-          КЭШБЭК НА КАРТУ ДО 10% <br />
+          <span>CASHBACK ON CARD UP TO 10%</span> <br />
           <a className="tel" href="tel:+74955067244">8(495) 506-7244</a>,{" "}
           <a className="tel" href="tel:+79163532070">8(916) 353-2070</a>
         </h5>
@@ -49,26 +49,26 @@ export default function Footer() {
 
       <div className="container">
         <div className="container2">
-          {/* Инфо Студии */}
+          {/* Studio info */}
           <ul>
             <li className="bottom_15">
               <img src="/img/Logo7.svg" alt="Pro Interier Logo" width="60%" />
             </li>
-            <li>© Студия Потолочный PRO Интерьер 2007-2021г.</li>
-            <li>Натяжные потолки Москва и МО. Дизайн. Монтаж.</li>
+            <li>© Studio Ceiling PRO Interior 2007-2021.</li>
+            <li>Stretch ceilings Moscow and Moscow Region. Design. Installation.</li>
             <li>
-              Телефон:{" "}
+              Phone:{" "}
               <a className="tel" href="tel:+84955067244">8(495) 506-7244</a>,{" "}
               <a className="tel" href="tel:+89163532070">8(916) 353-2070</a>
             </li>
             <li>
               E-mail: <a href="mailto:studia-inter@mail.ru">studia-inter@mail.ru</a>
             </li>
-            <li>Время работы: с 9.00 до 23.00 пн-вс</li>
-            <li>Авторские права на сайт и контент защищены.</li>
+            <li>Working hours: 9:00 AM to 11:00 PM Mon-Sun</li>
+            <li>Copyright for the website and content is protected.</li>
           </ul>
 
-          {/* Колонки категорий */}
+          {/* Categories Columns */}
           {columns.map((col, index) => (
             <ul key={index}>
               {col.map((item) => (
@@ -82,7 +82,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Оплата и Соцсети */}
+        {/* Payment and Social links */}
         <div className="payment-social">
           <div className="payment">
             <img src="/img/sber.svg" alt="Sberbank" />

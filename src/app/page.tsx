@@ -6,86 +6,86 @@ import TextAnimation from "@/components/TextAnimation/TextAnimation";
 export default function Home() {
   const products = [
     {
-      title: "Матовые, глянцевые потолки ПВХ",
-      description: "Матовая/сатиновая, лаковая фактура, классика",
-      price: "от 280 р.м²",
+      title: "Matte and Glossy PVC Ceilings",
+      description: "Matte/satin, lacquer texture, classic",
+      price: "from $280/m²",
       slug: "matovye-i-glyancivye-pvh",
       image: "/img/products/matovye-i-glyancivye.jpg",
     },
     {
-      title: "Тканевые потолки",
-      description: "Дескор(Descor) ткань полиэстр с полиуретаном. Все цвета",
-      price: "от 960 р.м²",
+      title: "Fabric Ceilings",
+      description: "Descor polyester fabric with polyurethane. All colors",
+      price: "from $960/m²",
       slug: "tkanevye-potolki",
       image: "/img/products/tkanivye.jpg",
     },
     {
-      title: "Многоуровневые потолки",
-      description: "В два и более уровня. Разные цвета, фактуры",
-      price: "от 1850 пог.м",
+      title: "Multi-level Ceilings",
+      description: "Two or more levels. Various colors and textures",
+      price: "from $1,850/lin.m",
       slug: "mnogourovnevye-potolki",
       image: "/img/products/mnogourovnivye.jpg",
     },
     {
-      title: "Световой потолок",
-      description: "Прозрачный потолок с подсветкой LED изнутри",
-      price: "от 6800 р.м²",
+      title: "Luminous Ceiling",
+      description: "Translucent ceiling with internal LED backlight",
+      price: "from $6,800/m²",
       slug: "svetovye-led-potolki",
       image: "/img/products/svetovoi.jpg",
     },
     {
-      title: "Парящий потолок",
-      description: "Фигурный профиль с мягкой подсветкой LED по стенам",
-      price: "от 950 пог.м",
+      title: "Floating Ceiling",
+      description: "Contour profile with soft LED wall lighting",
+      price: "from $950/lin.m",
       slug: "paryashie-potolki",
       image: "/img/products/paryashie.jpg",
     },
     {
-      title: "Теневой потолок",
-      description: "Стильное теневое примыкание потолка к стене, черный профиль",
-      price: "от 680 пог.м",
+      title: "Shadow Ceiling",
+      description: "Stylish shadow gap ceiling connection to wall, black profile",
+      price: "from $680/lin.m",
       slug: "tenevye-potolki",
       image: "/img/products/tenevoi.jpg",
     },
     {
-      title: "Световые линии",
-      description: "Линии, полосы с LED освещением в уровень потолка",
-      price: "от 1950 пог.м",
+      title: "Light Lines",
+      description: "Lines and strips with LED lighting flush with the ceiling",
+      price: "from $1,950/lin.m",
       slug: "svetovye-linii",
       image: "/img/products/liniy.jpg",
     },
     {
-      title: "Потолки с подсветкой LED",
-      description: "Варианты освещения лентами LED",
-      price: "от 650 пог.м",
+      title: "LED Backlit Ceilings",
+      description: "Lighting options with LED strips",
+      price: "from $650/lin.m",
       slug: "s-podsvetkoy-led",
       image: "/img/products/podsvetka.jpg",
     },
     {
-      title: "Фотопечать на потолке",
-      description: "Рисунки, изображения, картины на потолке",
-      price: "от 1850 р.м²",
+      title: "Photo Printed Ceilings",
+      description: "Drawings, images, paintings on the ceiling",
+      price: "from $1,850/m²",
       slug: "fotopechat-na-potolke",
       image: "/img/products/fotopechaty.jpg",
     },
     {
-      title: "3D натяжной потолок",
-      description: "Потолок с 3D объемом, подсветкой LED, фотопечатью",
-      price: "от 2200 р.м²",
+      title: "3D Stretch Ceiling",
+      description: "Ceiling with 3D volume, LED backlight, photo printing",
+      price: "from $2,200/m²",
       slug: "3d-potolki",
       image: "/img/products/3D.jpg",
     },
     {
-      title: "Небо на потолке",
-      description: "Натяжной потолок с фотопечатью Небо и облаков, варианты",
-      price: "от 1850 р.м²",
+      title: "Sky Ceiling",
+      description: "Stretch ceiling with Sky & Clouds photo printing, options",
+      price: "from $1,850/m²",
       slug: "nebo-s-oblakami",
       image: "/img/products/nebo.jpg",
     },
     {
-      title: "Звукоизоляция под натяжной потолок",
-      description: "Комплекс защиты от шумных соседей",
-      price: "от 1400 р.м²",
+      title: "Soundproofing Under Stretch Ceiling",
+      description: "Comprehensive noise protection from upstairs neighbors",
+      price: "from $1,400/m²",
       slug: "shumoizolyaciya-potolka",
       image: "/img/products/zvukoizolyazia.jpg",
     },
@@ -93,66 +93,66 @@ export default function Home() {
 
   return (
     <main>
-      {/* Главный Слайдер */}
+      {/* Main Slider */}
       <Slider />
 
-      {/* Блок 01 - Натяжные потолки */}
+      {/* Block 01 - Stretch Ceilings */}
       <section className="block_01">
         <div className="container">
           <div className="number_header bottom_30">
             <span className="number">01</span>
-            <h3>НАТЯЖНЫЕ ПОТОЛКИ</h3>
+            <h3>STRETCH CEILINGS</h3>
           </div>
           <div className="page_content">
             <img 
               className="page_image" 
               src="/img/room2.png" 
-              alt="Натяжные потолки в интерьере" 
+              alt="Stretch ceilings in the interior" 
             />
             <p>
-              Натяжные потолки пвх, матовые, глянцевые или тканевые, уверенно вошли в понятие современная отделка потолка. Купить или заказать монтаж натяжного потолка недорого можно у нас, официально, с гарантией.
+              PVC stretch ceilings, in matte, glossy, or fabric textures, have firmly established themselves in the concept of modern ceiling finishes. You can buy or order stretch ceiling installation from us at an affordable price, officially, and with a warranty.
               <br /><br />
-              Конечно же, приходят мысли о покраске потолка, его выравнивании, гипсокартон, шпаклевка, грунтовка... Где взять время, силы, кого нанимать, будет ли потом трескаться, в общем, куча вопросов на Вашу голову!
+              Of course, you might think about painting the ceiling, leveling it, using drywall, plastering, priming... Where to get the time and strength, who to hire, will it crack later? A whole bunch of headaches!
               <br /><br />
-              А вот с натяжными потолками у Вас не возникнет таких вопросов. Монтаж, установка натяжных потолков проходит быстро, без пыли и грязи. Натяжной потолок в комнату займет не более 2-3 часов установки. Стоимость натяжных потолков – это отдельный разговор, здесь стоит подчеркнуть, что цена не выходит за грани приличия. Если вы решили купить натяжные потолки, стоимость такой покупки будет зависеть от фактуры и размеров полотен. Например, матовый натяжной потолок ПВХ в комнату 15 м.кв. будет стоить всего 12000р. Очень доступно! Причем всем! Красота! Вы забудете о ремонте потолков на 10-15 лет минимум.
+              With stretch ceilings, you won't face these issues. The assembly and installation of stretch ceilings are fast, without dust and dirt. Installing a stretch ceiling in a room takes no more than 2-3 hours. The cost of stretch ceilings is a separate conversation, and it is worth emphasizing that the price is very reasonable. If you decide to buy stretch ceilings, the cost of such a purchase will depend on the texture and dimensions of the canvas. For example, a matte PVC stretch ceiling in a 15 sq.m. room will cost only $12,000. Very affordable for everyone! Beautiful! You will forget about ceiling repairs for at least 10-15 years.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Блок Акции - Ниша для штор */}
+      {/* Promo Block - Curtain Niche */}
       <section className="block_02">
         <div className="container">
           <div className="container_small">
-            <h4>Ниша для штор</h4>
-            <p className="free">бесплатно!</p>
+            <h4>Curtain Niche</h4>
+            <p className="free">free!</p>
             <Link href="/ceilings/nisha-dlya-shtor-skrytaya" className="underline left_180">
-              подробнее
+              details
             </Link>
           </div>
           <div className="img">
-            <img src="/img/1574075992_nisha-dlya-shtor.jpg" alt="Ниша для штор" />
+            <img src="/img/1574075992_nisha-dlya-shtor.jpg" alt="Curtain Niche" />
           </div>
           <div className="img">
-            <img src="/img/1574075928_shtory-nisha.png" alt="Шторы в нише" />
+            <img src="/img/1574075928_shtory-nisha.png" alt="Curtains in niche" />
           </div>
           <div className="img hit">
-            <img src="/img/1574076126_nishi-dlya-shtory.jpg" alt="Ниши для шторы хит" />
+            <img src="/img/1574076126_nishi-dlya-shtory.jpg" alt="Curtain Niche Best Choice" />
           </div>
         </div>
       </section>
 
-      {/* Блок 03 - Каталог потолков */}
+      {/* Block 03 - Stretch Ceilings Catalog */}
       <section className="block_03">
         <div className="container">
           <div className="number_header">
             <span className="number">02</span>
-            <h3>натяжные потолки со вкусом</h3>
+            <h3>tasteful stretch ceilings</h3>
           </div>
         </div>
 
         <div className="products">
-          {/* Первая строка карточек (4 штуки) */}
+          {/* First row of cards (4 cards) */}
           {products.slice(0, 4).map((prod) => (
             <div 
               key={prod.slug} 
@@ -164,20 +164,20 @@ export default function Home() {
                 <div className="description">{prod.description}</div>
                 <div className="price">{prod.price}</div>
                 <Link href={`/ceilings/${prod.slug}`} className="more">
-                  подробнее
+                  details
                 </Link>
               </div>
             </div>
           ))}
 
-          {/* Рекламный блок */}
+          {/* Promotional Banner */}
           <div className="adv">
             <Link href="/discounts">
-              <TextAnimation text="дизайн потолков бесплатно!" />
+              <TextAnimation text="free ceiling design!" />
             </Link>
           </div>
 
-          {/* Остальные карточки */}
+          {/* Remaining cards */}
           {products.slice(4).map((prod) => (
             <div 
               key={prod.slug} 
@@ -189,7 +189,7 @@ export default function Home() {
                 <div className="description">{prod.description}</div>
                 <div className="price">{prod.price}</div>
                 <Link href={`/ceilings/${prod.slug}`} className="more">
-                  подробнее
+                  details
                 </Link>
               </div>
             </div>
@@ -197,43 +197,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок 04 - Наша студия */}
+      {/* Block 04 - Our Studio */}
       <section className="block_04">
         <div className="container">
           <div className="number_header">
             <span className="number">03</span>
-            <h3>наша студия</h3>
+            <h3>our studio</h3>
           </div>
           <div className="page_content">
             <p>
-              Натяжные потолки уже достаточно давно вошли в нашу жизнь. Еще натяжные потолки называют французские натяжные потолки, ведь такой вид потолков родом из Франции. Хотите тканевые потолки, хотите пленочные, а может матовые натяжные потолки или глянцевые натяжные потолки?! Конечно, Вы выберите то, что захочется.
+              Stretch ceilings entered our lives a long time ago. They are also called French stretch ceilings, because this type of ceiling originated in France. Whether you want fabric ceilings, film ceilings, or maybe matte or glossy stretch ceilings - you will certainly find what you want.
               <br /><br />
-              Натяжные потолки в квартиру, деревянный дом долговечны, водонепроницаемы, имеют широкую гамму цветов, и наконец, они просто красивы. Новый тренд - теневой натяжной потолок с профилем Euro Kraab(Евро Краб). А если захотите отразить на потолках какую-либо фотографию или изображение, то художественный потолок с фотопечатью с этим справится на 5+. Особо презентабельно будут смотреться многоуровневые натяжные потолки, которые подчеркнут объем вашей комнаты. Современный тренд - световые линии на натяжной потолок и световые светящиеся потолки, как единый огромный и равномерный светильник на всю комнату. Пыль на таких потолках не оседает, а если и случайно и запачкали, то просто можно проводить влажную уборку натяжных потолков, слегка протерев губкой, смоченной мыльным раствором.
+              Stretch ceilings in apartments or wooden houses are durable, waterproof, have a wide range of colors, and are simply beautiful. The new trend is a shadow gap stretch ceiling with a EuroKraab profile. And if you want to display any photo or image on the ceilings, a photo-printed ceiling will do it perfectly. Multi-level stretch ceilings look especially prestigious, emphasizing the volume of your room. Modern trends include light lines on stretch ceilings and luminous ceilings, acting as a single huge, uniform lamp for the entire room. Dust does not settle on such ceilings, and if they get dirty, you can easily clean them with a damp sponge and soapy water.
               <br /><br />
-              Наша студия Потолочный PRO Интерьер давно и ответственно работает с натяжными потолками любого уровня сложности, мы разработаем для Вас бесплатно дизайн натяжных потолков, подскажем варианты правильного освещения, быстро и недорого произведем монтаж натяжных потолков в Москве и Подмосковье. И не забывайте что наши скидки и акции обязательно Вас порадуют. Французские натяжные потолки внесут свежесть и, безусловно, украсят Ваши помещения, а мы, студия Потолочный PRO Интерьер с удовольствием Вам в этом поможем!
+              Our studio 'Ceiling PRO Interior' has been working with stretch ceilings of any level of complexity responsibly for a long time. We will design a free stretch ceiling layout for you, suggest correct lighting options, and quickly install stretch ceilings in Moscow and Moscow region at an affordable price. And do not forget that our discounts and promotions will definitely please you. French stretch ceilings will bring freshness and certainly decorate your rooms, and we, 'Ceiling PRO Interior' studio, will be happy to help you!
             </p>
             <div className="studio_images">
               <img 
                 className="studio_image" 
                 src="/img/1-натяжной-потолок-в-квартиру.jpg" 
-                alt="Натяжной потолок в интерьере" 
+                alt="Stretch ceiling in apartment" 
               />
               <img 
                 className="studio_image" 
                 src="/img/3-спальня.jpg" 
-                alt="Натяжной потолок в спальне" 
+                alt="Stretch ceiling in bedroom" 
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Блок 05 - Отзывы клиентов */}
+      {/* Block 05 - Testimonials */}
       <section className="block_05">
         <div className="container">
           <div className="number_header">
             <span className="number">04</span>
-            <h3>отзывы наших клиентов</h3>
+            <h3>what our clients say</h3>
           </div>
         </div>
         <Reviews />

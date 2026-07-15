@@ -21,10 +21,10 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: 1,
-    title: "Квартира",
-    description: "Cтудия натяжной потолок белый матовый пвх",
+    title: "Apartment",
+    description: "Studio stretch ceiling white matte PVC",
     image: "/img/slider/room.jpg",
-    price: "от 23 800 ₽",
+    price: "from $23,800",
     slug: "v-kvartire",
     orientation: "horizontal",
     slice1Rotation: -25,
@@ -34,10 +34,10 @@ const slides: SlideData[] = [
   },
   {
     id: 2,
-    title: "Кухня",
-    description: "Натяжной потолок пвх матовый белый",
+    title: "Kitchen",
+    description: "Stretch ceiling PVC matte white",
     image: "/img/slider/kitchen.jpg",
-    price: "от 9 600 ₽",
+    price: "from $9,600",
     slug: "v-kuhne",
     orientation: "vertical",
     slice1Rotation: 10,
@@ -47,10 +47,10 @@ const slides: SlideData[] = [
   },
   {
     id: 3,
-    title: "Спальня",
-    description: "Натяжной потолок тканевый Дескор белый",
+    title: "Bedroom",
+    description: "Stretch ceiling fabric Descor white",
     image: "/img/slider/badroom.jpg",
-    price: "от 16 400 ₽",
+    price: "from $16,400",
     slug: "tkanevye-potolki",
     orientation: "horizontal",
     slice1Rotation: 3,
@@ -60,10 +60,10 @@ const slides: SlideData[] = [
   },
   {
     id: 4,
-    title: "Ванная",
-    description: "Натяжной потолок пвх матовый белый",
+    title: "Bathroom",
+    description: "Stretch ceiling PVC matte white",
     image: "/img/slider/bathroom.jpg",
-    price: "от 7 800 ₽",
+    price: "from $7,800",
     slug: "v-vanne",
     orientation: "vertical",
     slice1Rotation: -5,
@@ -73,10 +73,10 @@ const slides: SlideData[] = [
   },
   {
     id: 5,
-    title: "Гостинная",
-    description: "Натяжной потолок пвх матовый белый",
+    title: "Living Room",
+    description: "Stretch ceiling PVC matte white",
     image: "/img/slider/livingroom.jpg",
-    price: "от 13 700 ₽",
+    price: "from $13,700",
     slug: "v-kvartire",
     orientation: "horizontal",
     slice1Rotation: -5,
@@ -111,7 +111,7 @@ export default function Slider() {
       const timer = setTimeout(() => {
         setExiting(null);
         setIsTransitioning(false);
-      }, 800); // Совпадает со скоростью перехода в CSS (0.8s)
+      }, 800); // Matches CSS transition speed (0.8s)
       return () => clearTimeout(timer);
     }
   }, [exiting]);
@@ -150,7 +150,7 @@ export default function Slider() {
 
         const isHorizontal = slide.orientation === "horizontal";
 
-        // Расчет 3D трансформаций для уходящего слайда
+        // Calculate 3D transitions for exiting slide
         let slice1Style: React.CSSProperties = {};
         let slice2Style: React.CSSProperties = {};
 
@@ -181,7 +181,7 @@ export default function Slider() {
             key={slide.id}
             className={`${styles.slide} ${isActive ? styles.slideActive : ""} ${isExiting ? styles.slideExiting : ""}`}
           >
-            {/* 3D Сплит фонового изображения */}
+            {/* 3D split of background image */}
             <div
               className={`${styles.bgSlice} ${isHorizontal ? styles.sliceTop : styles.sliceLeft}`}
               style={{ 
@@ -197,32 +197,32 @@ export default function Slider() {
               }}
             />
 
-            {/* Контент слайда */}
+            {/* Slide content */}
             <div className={styles.slideContent}>
               <h2>{slide.title}</h2>
               <p>{slide.description}</p>
               
-              {/* Кнопка с ценой по центру */}
+              {/* Central price button */}
               <Link href={`/ceilings/${slide.slug}`} className={styles.priceBtn}>
                 <span className={styles.priceText}>{slide.price}</span>
-                <span className={styles.hoverText}>ПОДРОБНЕЕ</span>
+                <span className={styles.hoverText}>DETAILS</span>
               </Link>
             </div>
           </div>
         );
       })}
 
-      {/* Квадратные кнопки навигации внизу справа */}
+      {/* Nav arrows bottom-right */}
       <div className={styles.navArrows}>
         <button
           className={styles.arrowPrev}
           onClick={handlePrevClick}
-          aria-label="Предыдущий слайд"
+          aria-label="Previous slide"
         />
         <button
           className={styles.arrowNext}
           onClick={handleNextClick}
-          aria-label="Следующий слайд"
+          aria-label="Next slide"
         />
       </div>
     </div>

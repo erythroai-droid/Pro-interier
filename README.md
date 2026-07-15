@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Потолочный PRO Интерьер (Pro-interier) — Сайт натяжных потолков под ключ
 
-## Getting Started
+Информационный сайт-лендинг студии дизайна и установки натяжных потолков **«Потолочный PRO Интерьер»** (Москва и МО). Проект полностью переведен на английский язык и оснащен интерактивными калькулятором и формами заказа замеров.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠️ Стек технологий
+
+- **Фреймворк**: Next.js 16.2 (App Router)
+- **Библиотека**: React 19.2
+- **Язык**: TypeScript 5.x
+- **Стилизация**: CSS Modules, Ванильный CSS (без TailwindCSS для гибкости верстки)
+- **Сборка**: Turbopack
+
+---
+
+## 🌟 Ключевые возможности проекта
+
+1. **Интерактивный калькулятор потолков (Ceiling Calculator)**:
+   - Всплывающее модальное окно с 3-шаговой настройкой:
+     1. Площадь матового потолка в м² (влияет на базовую стоимость).
+     2. Включение/выключение теневого профиля-багета (стоимость рассчитывается по периметру: `4 * Math.sqrt(Area)`).
+     3. Количество закладных под светильники.
+   - Мгновенный пересчет ориентировочной цены в реальном времени.
+   - Форма фиксации расчета с отправкой контактов (Имя, Телефон).
+   - Кнопка быстрой очистки параметров.
+   - Экран успешной отправки заявки.
+
+2. **Форма вызова замерщика (Book a Measurement)**:
+   - Быстрая модальная форма заказа бесплатного замера.
+   - Простая валидация полей.
+   - Экран успешной отправки заявки.
+
+3. **Стилевое оформление**:
+   - Дизайн с острыми гранями без скруглений (`border-radius: 0;`), подчеркивающий строгий хай-тек стиль.
+   - Элементы размытия фона (`backdrop-filter: blur`) на оверлеях модальных окон.
+   - Фирменные красно-оранжевые (`#F3400A`) ховеры и фокусы на кнопках, полях ввода и крестиках закрытия.
+   - Желтые бренд-акценты (`#FFC600`) на ключевых элементах.
+
+4. **Полная англоязычная локализация**:
+   - Все заголовки, описания, метатеги, ключевые слова, отзывы клиентов, слайдеры, формы и статические тексты переведены на английский язык.
+   - Цены и расчеты приведены к формату доллара (`$`) с использованием корректной региональной локали (`en-US`) для форматирования чисел.
+   - Языковой тег страницы изменен на `<html lang="en">`.
+   - Исправлены опечатки в исходных ключах данных и ссылках для корректной маршрутизации.
+
+---
+
+## 📁 Структура проекта
+
+```text
+├── public/                 # Статические ресурсы (логотипы, иконки, изображения)
+└── src/
+    ├── app/                # Next.js App Router (страницы и глобальные стили)
+    │   ├── ceilings/       # Динамические страницы категорий потолков
+    │   │   └── [slug]/     # Шаблон детальной страницы категории
+    │   ├── globals.css     # Глобальные стили сайта и адаптивность
+    │   ├── layout.tsx      # Главный макет (импорт Navbar, Footer, метаданные)
+    │   └── page.tsx        # Главная страница (продукты, промо-блоки, отзывы)
+    ├── components/         # Реализуемые React-компоненты
+    │   ├── CalculatorModal # Модалка калькулятора (расчет и сбор лидов)
+    │   ├── RequestModal    # Модалка вызова замерщика
+    │   ├── Navbar          # Шапка сайта (с кнопками-триггерами модалок)
+    │   ├── Footer          # Подвал сайта (с плашкой кэшбэка и контактами)
+    │   ├── Slider          # Главный 3D-слайдер на домашней странице
+    │   ├── Reviews         # Слайдер отзывов клиентов
+    │   ├── Sidebar         # Боковое меню категорий для внутренних страниц
+    │   └── TextAnimation   # Анимированная строка для промо-акций
+    └── data/
+        └── ceilings.ts     # База данных категорий потолков (тексты на англ.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Запуск проекта локально
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Установка зависимостей
+```bash
+npm install
+```
 
-## Learn More
+### Запуск в режиме разработки
+```bash
+npm run dev
+```
+Сайт будет доступен по адресу [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Сборка и запуск в production
+```bash
+npm run build
+npm run start
+```
