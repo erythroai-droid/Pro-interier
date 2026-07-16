@@ -728,6 +728,12 @@ span.number::after {
   .inner_content {
     grid-template-columns: 1fr;
   }
+
+  .block_06 .payment-social {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
   
   .number_header h3 {
     position: absolute;
@@ -736,7 +742,8 @@ span.number::after {
     margin: 0;
     padding-left: 0;
     font-size: 24px;
-    white-space: nowrap;
+    white-space: normal;
+    right: 0;
   }
   
   span.number {
