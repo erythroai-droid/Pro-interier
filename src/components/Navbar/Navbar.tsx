@@ -90,7 +90,8 @@ export default function Navbar() {
         {/* Ceiling Types Section */}
         <div className={styles.menuArea}>
           <div className={styles.kind} onClick={toggleDropdown}>
-            ceiling types
+            <span className={styles.desktopText}>ceiling types</span>
+            <span className={styles.mobileText}>CEILING TYPES</span>
             <span className={`${styles.openIcon} ${isDropdownOpen ? styles.openIconActive : ""}`} />
           </div>
         </div>
@@ -145,7 +146,8 @@ export default function Navbar() {
           className={`${styles.hamburger} ${isScrolled ? styles.hamburgerScrolled : ""} ${isMobileMenuOpen ? styles.burgerActive : ""}`}
           onClick={toggleMobileMenu}
         >
-          <div className={styles.burgerLines} />
+          <span className={styles.hamburgerText}>MENU</span>
+          <span className={styles.doubleArrowIcon} />
         </div>
       </div>
 
@@ -189,7 +191,12 @@ export default function Navbar() {
             href="/ceilings/shumoizolyaciya-potolka" 
             onClick={() => setIsDropdownOpen(false)}
           >
-            <TextAnimation text="Order soundproofing and get a discount on your stretch ceiling!" />
+            <span className={styles.desktopPromo}>
+              <TextAnimation text="Order soundproofing and get a discount on your stretch ceiling!" />
+            </span>
+            <span className={styles.mobilePromo}>
+              Order soundproofing and get a discount on your stretch ceiling!
+            </span>
           </Link>
         </div>
       </div>

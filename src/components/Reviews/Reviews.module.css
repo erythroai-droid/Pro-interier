@@ -161,14 +161,14 @@
   }
   
   .avatarWrapper {
-    width: 300px;
-    height: auto;
-    justify-content: center;
+    display: none;
   }
   
   .textBlock {
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 100px;
     width: 100%;
+    box-sizing: border-box;
   }
   
   .testimonial {
@@ -177,12 +177,44 @@
     line-height: 30px;
   }
   
-  .prev, .next {
-    width: 50px;
-    height: 50px;
-    top: 30%;
+  .testimonial::before {
+    left: 20px;
+    top: 0;
   }
   
-  .prev { left: 10px; }
-  .next { right: 10px; }
+  .testimonial::after {
+    right: 20px;
+    bottom: 0;
+  }
+  
+  .dotsContainer {
+    display: none;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    bottom: 80px;
+    top: auto;
+    transform: none;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+  
+  .prev {
+    left: 20px;
+    background-image: url(/img/left40_black.svg);
+  }
+  
+  .next {
+    right: 20px;
+    background-image: url(/img/right40_black.svg);
+  }
 }

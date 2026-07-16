@@ -427,30 +427,126 @@
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .modal {
-    padding: 25px 20px;
+    padding: 20px 15px;
+    max-height: 95vh;
+  }
+  
+  .closeBtn {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .modalTitle {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  
+  .modalSubtitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .form {
+    gap: 12px;
+  }
+  
+  .stepBlock {
+    gap: 6px;
+  }
+  
+  .stepHeader {
+    gap: 10px;
+  }
+  
+  .stepNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+  
+  .stepLabel {
+    font-size: 14px;
+  }
+  
+  .inputField, .toggleBtn, .textInput {
+    height: 38px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  
+  .resultContainer {
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .priceBox {
+    padding: 10px 12px;
+  }
+  
+  .priceLabel {
+    font-size: 10px;
+  }
+  
+  .priceValue {
+    font-size: 24px;
+    margin: 2px 0;
+  }
+  
+  .priceHint {
+    font-size: 10px;
+  }
+  
+  .clearBtn {
+    width: 80px;
+    height: auto;
+    font-size: 14px;
+  }
+  
+  .offerText {
+    font-size: 11px;
+    margin: 2px 0;
+  }
+  
+  .leadSection {
+    padding-top: 12px;
+    margin-top: 5px;
+  }
+  
+  .leadTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
   
   .inputRow {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
+    margin-bottom: 10px;
   }
   
-  .resultContainer {
-    flex-direction: column;
+  .inputGroup {
+    gap: 4px;
   }
   
-  .clearBtn {
-    width: 100%;
-    height: 50px;
+  .inputLabel {
+    font-size: 12px;
   }
   
-  .priceValue {
-    font-size: 32px;
+  .submitBtn {
+    height: 42px;
+    font-size: 15px;
   }
   
   .leadFootnotes {
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .leadFootnotes span {
+    font-size: 10px;
   }
 }

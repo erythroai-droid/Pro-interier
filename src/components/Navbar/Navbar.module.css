@@ -297,6 +297,30 @@
 }
 
 /* Мобильное бургер-меню */
+.hamburgerText {
+  display: none;
+}
+
+.doubleArrowIcon {
+  display: none;
+}
+
+.desktopText {
+  display: inline;
+}
+
+.mobileText {
+  display: none;
+}
+
+.desktopPromo {
+  display: inline;
+}
+
+.mobilePromo {
+  display: none;
+}
+
 .hamburger {
   display: none;
   position: relative;
@@ -314,46 +338,6 @@
 
 .hamburgerScrolled {
   background-color: rgba(0, 0, 0, 1);
-}
-
-.burgerLines {
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  position: relative;
-  transition: background-color 0.3s ease;
-}
-
-.burgerLines::before,
-.burgerLines::after {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  transition: transform 0.3s ease, top 0.3s ease;
-}
-
-.burgerLines::before {
-  top: -8px;
-}
-
-.burgerLines::after {
-  top: 8px;
-}
-
-.burgerActive .burgerLines {
-  background-color: transparent;
-}
-
-.burgerActive .burgerLines::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.burgerActive .burgerLines::after {
-  top: 0;
-  transform: rotate(-45deg);
 }
 
 .mobileMenu {
@@ -432,12 +416,176 @@
   
   .hamburger {
     display: flex;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .hamburgerScrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .hamburgerText {
+    display: inline-block;
+    color: #fff;
+    font-family: var(--font-oswald), sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .doubleArrowIcon {
+    display: inline-block;
+    background: url(/img/double-arrow-left.svg) no-repeat center;
+    background-size: contain;
+    width: 20px;
+    height: 12px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .burgerActive .doubleArrowIcon {
+    transform: rotate(180deg);
   }
   
   .navbar {
-    justify-content: space-between;
+    height: 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 60px;
+    justify-content: stretch;
   }
-  
+
+  .menuScrolled {
+    background: transparent;
+  }
+
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    background-color: #FFC600;
+    background-size: auto 70%;
+  }
+
+  .menuArea {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 60px;
+  }
+
+  .kind {
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    padding: 0;
+    background: #F3400A;
+    margin: 0;
+    border-bottom: 1px solid #ffffff;
+    box-sizing: border-box;
+  }
+
+  .desktopText {
+    display: none;
+  }
+
+  .mobileText {
+    display: inline;
+    font-family: var(--font-oswald), sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .openIcon {
+    margin-left: 10px;
+  }
+
+  .mobileMenu {
+    top: 140px;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: #000000;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .dropdownMenu {
+    justify-content: flex-start;
+    padding-top: 160px;
+    box-sizing: border-box;
+  }
+
+  .dropdownTopBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    display: block;
+  }
+
+  .dropdownLogo {
+    width: 100%;
+    height: 80px;
+    background-color: #FFC600;
+    background-size: auto 70%;
+  }
+
+  .dropdownClose {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 50%;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+  }
+
+  .dropdownPromo {
+    height: auto;
+    min-height: 50px;
+    padding: 10px;
+  }
+
+  .dropdownPromo a {
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 5px 10px;
+  }
+
+  .desktopPromo {
+    display: none;
+  }
+
+  .mobilePromo {
+    display: block;
+    animation: promoFade 2s ease-in-out infinite alternate;
+  }
   .dropdownContent {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -449,6 +597,11 @@
     font-size: 28px;
     margin-bottom: 20px;
   }
+}
+
+@keyframes promoFade {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
 @media (max-width: 500px) {

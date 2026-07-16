@@ -220,18 +220,33 @@
 
 /* Адаптивность */
 @media (max-width: 1024px) {
+  .arrowPrev, .arrowNext {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    opacity: 0.7;
+  }
+  
+  .arrowPrev:hover, .arrowNext:hover {
+    opacity: 1;
+  }
+
   .arrowPrev {
-    right: 99px;
+    left: 20px;
+    right: auto;
     width: 60px;
     height: 60px;
     bottom: 30px;
   }
   
   .arrowNext {
-    right: 40px;
+    right: 20px;
     width: 60px;
     height: 60px;
     bottom: 30px;
+  }
+
+  .slideContent {
+    padding-top: 140px;
+    box-sizing: border-box;
   }
 }
 
@@ -260,14 +275,15 @@
   }
   
   .arrowPrev {
-    right: 79px;
+    left: 20px;
+    right: auto;
     width: 50px;
     height: 50px;
     bottom: 20px;
   }
   
   .arrowNext {
-    right: 30px;
+    right: 20px;
     width: 50px;
     height: 50px;
     bottom: 20px;
