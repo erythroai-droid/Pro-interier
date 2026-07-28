@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import styles from "./Reviews.module.css";
 
@@ -42,59 +42,112 @@ const testimonials: Testimonial[] = [
 
 export default function Reviews() {
   const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
+    setDirection("next");
     setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
+    setDirection("prev");
     setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
+  }, []);
 
   const setSlide = (idx: number) => {
+    if (idx === current) return;
+    setDirection(idx > current ? "next" : "prev");
     setCurrent(idx);
   };
 
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused, nextSlide]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX.current - touchEndX;
+
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    touchStartX.current = null;
+  };
+
   return (
-    <div className={styles.slideshowContainer}>
-      {testimonials.map((item, idx) => {
-        const isActive = idx === current;
-        return (
-          <div
-            key={item.id}
-            className={`${styles.slide} ${isActive ? styles.slideActive : ""}`}
-          >
-            <div className={styles.inner}>
-              {/* Photo */}
-              <div className={styles.avatarWrapper}>
-                <img src={item.image} alt={`${item.nameFirst} ${item.nameLast}`} />
-              </div>
-              {/* Testimonial Text */}
-              <div className={styles.textBlock}>
-                <p className={styles.testimonial}>{item.text}</p>
-                <p className={styles.name}>
-                  {item.nameFirst} <span>{item.nameLast}</span>
-                  {item.nameFirst2 && (
-                    <>
-                      <br />
-                      and {item.nameFirst2} <span>{item.nameLast2}</span>
-                    </>
-                  )}
-                </p>
-                <p className={`${styles.alignRight} bottom_50`}>
-                  <Link href="/reviews" className="underline">
-                    details
-                  </Link>
-                </p>
+    <div
+      className={styles.slideshowContainer}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className={styles.slidesWrapper}>
+        {testimonials.map((item, idx) => {
+          const isActive = idx === current;
+          return (
+            <div
+              key={item.id}
+              className={`${styles.slide} ${
+                isActive ? styles.slideActive : ""
+              } ${direction === "next" ? styles.slideNext : styles.slidePrev}`}
+              aria-hidden={!isActive}
+            >
+              <div className={styles.inner}>
+                {/* Photo */}
+                <div className={styles.avatarWrapper}>
+                  <img src={item.image} alt={`${item.nameFirst} ${item.nameLast}`} />
+                </div>
+                {/* Testimonial Text */}
+                <div className={styles.textBlock}>
+                  <p className={styles.testimonial}>{item.text}</p>
+                  <p className={styles.name}>
+                    {item.nameFirst} <span>{item.nameLast}</span>
+                    {item.nameFirst2 && (
+                      <>
+                        <br />
+                        and {item.nameFirst2} <span>{item.nameLast2}</span>
+                      </>
+                    )}
+                  </p>
+                  <p className={`${styles.alignRight} bottom_50`}>
+                    <Link href="/reviews" className="underline">
+                      details
+                    </Link>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       {/* Prev/Next buttons */}
-      <button className={styles.prev} onClick={prevSlide} aria-label="Previous review" />
-      <button className={styles.next} onClick={nextSlide} aria-label="Next review" />
+      <button
+        className={styles.prev}
+        onClick={prevSlide}
+        aria-label="Previous review"
+      />
+      <button
+        className={styles.next}
+        onClick={nextSlide}
+        aria-label="Next review"
+      />
 
       {/* Indicators (dots) */}
       <div className={styles.dotsContainer}>
@@ -110,3 +163,4 @@ export default function Reviews() {
     </div>
   );
 }
+
