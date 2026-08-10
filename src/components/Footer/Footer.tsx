@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Studio info */}
           <ul>
             <li className="bottom_15">
-              <img src="/img/Logo7.svg" alt="Pro Interier Logo" width="60%" />
+              <img src="/img/Logo_en2.svg" alt="Pro Interier Logo" width="60%" />
             </li>
             <li>© Studio Ceiling PRO Interior 2007-2021.</li>
             <li>Stretch ceilings Moscow and Moscow Region. Design. Installation.</li>

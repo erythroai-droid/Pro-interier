@@ -13,8 +13,8 @@
   display: block;
   height: 80px;
   width: 200px;
-  background: #FFC600 url(/img/Logo6.svg) no-repeat center;
-  background-size: 80%;
+  background: #FFC600 url(/img/Logo_en2.svg) no-repeat center;
+  background-size: 85%;
   z-index: 9999;
   padding: 0 100px;
   flex-shrink: 0;
@@ -185,8 +185,8 @@
 .dropdownLogo {
   width: 200px;
   height: 80px;
-  background: #FFC600 url(/img/Logo6.svg) no-repeat center;
-  background-size: 80%;
+  background: #FFC600 url(/img/Logo_en2.svg) no-repeat center;
+  background-size: 85%;
   flex-shrink: 0;
 }
 
