@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
 import TextAnimation from "@/components/TextAnimation/TextAnimation";
 import CalculatorModal from "@/components/CalculatorModal/CalculatorModal";
 import RequestModal from "@/components/RequestModal/RequestModal";
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isRequestOpen, setIsRequestOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +38,40 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // GSAP animation when mega dropdown opens
+  useEffect(() => {
+    if (isDropdownOpen && dropdownRef.current) {
+      const header = dropdownRef.current.querySelector(`.${styles.dropdownHeader}`);
+      const lists = dropdownRef.current.querySelectorAll(`.${styles.dropdownContent} ul`);
+      const promo = dropdownRef.current.querySelector(`.${styles.dropdownPromo}`);
+
+      const tl = gsap.timeline();
+      if (header) {
+        tl.fromTo(
+          header,
+          { opacity: 0, y: -20, letterSpacing: "4px" },
+          { opacity: 1, y: 0, letterSpacing: "0px", duration: 0.5, ease: "power2.out" }
+        );
+      }
+      if (lists.length > 0) {
+        tl.fromTo(
+          lists,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: "power3.out" },
+          "-=0.3"
+        );
+      }
+      if (promo) {
+        tl.fromTo(
+          promo,
+          { opacity: 0, scale: 0.95 },
+          { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" },
+          "-=0.2"
+        );
+      }
+    }
+  }, [isDropdownOpen]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -152,7 +188,10 @@ export default function Navbar() {
       </div>
 
       {/* Mega dropdown menu "Ceiling Types" */}
-      <div className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuOpen : ""}`}>
+      <div 
+        ref={dropdownRef}
+        className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuOpen : ""}`}
+      >
         {/* Top panel: Logo + Close */}
         <div className={styles.dropdownTopBar}>
           <div className={styles.dropdownLogo} />

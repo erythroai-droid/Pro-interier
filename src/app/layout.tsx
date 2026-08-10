@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Oswald, PT_Serif } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import ScrollAnimations from "@/components/GSAPAnimations/ScrollAnimations";
+import FloatingActions from "@/components/FloatingActions/FloatingActions";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -33,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${ptSerif.variable}`}>
       <body>
+        <ScrollAnimations />
         <Navbar />
         {children}
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

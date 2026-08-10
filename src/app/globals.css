@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-oswald), sans-serif;
   background: #ffffff;
@@ -12,6 +16,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Сетки и контейнеры */
@@ -184,14 +189,26 @@ p {
   margin-left: 30px;
   overflow: hidden;
   position: relative;
-  border-radius: 0;
+  border-radius: 4px;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.block_02 .img:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .block_02 .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.block_02 .img:hover img {
+  transform: scale(1.08);
 }
 
 .block_02 .hit::before {
@@ -204,6 +221,12 @@ p {
   top: -3px;
   left: 170px;
   z-index: 10;
+  animation: floatHit 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatHit {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
 }
 
 .block_02 .free {
@@ -216,6 +239,7 @@ p {
   padding-left: 100px;
   line-height: 30px;
   background: linear-gradient(to right, #ffc600 0% 43%, #ffc70500 43%, #fff0 100%);
+  position: relative;
 }
 
 /* Блок 03 - Виды потолков */
@@ -232,6 +256,7 @@ p {
   gap: 30px;
   margin-top: 30px;
   padding: 0 30px;
+  perspective: 1200px;
 }
 
 .block_03 .productCard {
@@ -243,21 +268,41 @@ p {
   padding: 25px;
   position: relative;
   overflow: hidden;
-  border-radius: 0;
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 6px;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.8), 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.3s ease;
   background-size: cover;
   background-position: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.block_03 .productCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.block_03 .productCard:hover::after {
+  left: 200%;
 }
 
 .block_03 .productCard:hover {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.7), 0 16px 35px rgba(0,0,0,0.3);
 }
 
 .block_03 .cloud {
   position: relative;
   transform: translateY(65px);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
 }
 
 .block_03 .productCard:hover .cloud {
@@ -269,6 +314,7 @@ p {
   font-size: 26px;
   line-height: 1.2;
   margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .block_03 .description {
@@ -278,12 +324,14 @@ p {
   color: #fff;
   line-height: 22px;
   margin-bottom: 15px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 .block_03 .price {
   font-size: 24px;
   font-weight: 600;
   color: #FFC600;
+  text-shadow: 0 2px 8px rgba(255,198,0,0.4);
 }
 
 .block_03 .more {
@@ -295,15 +343,16 @@ p {
   text-transform: uppercase;
   color: #000;
   margin-top: 15px;
-  border-radius: 0;
+  border-radius: 3px;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .block_03 .more:hover {
   background: #F3400A;
   color: #fff;
+  box-shadow: 0 4px 15px rgba(243, 64, 10, 0.4);
 }
 
 .block_03 .productCard:hover .more {
@@ -316,11 +365,26 @@ p {
   height: 70px;
   width: 100%;
   grid-column: 1 / -1;
-  background-color: #ffc600;
+  background: linear-gradient(90deg, #ffc600, #ffe066, #ffc600);
+  background-size: 200% 100%;
+  animation: shineGradient 6s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(255, 198, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes shineGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.block_03 .adv:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 198, 0, 0.45);
 }
 
 .block_03 .adv a {
@@ -370,8 +434,14 @@ p {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.block_04 .studio_image:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.28);
 }
 
 /* Блок 05 - Отзывы */
@@ -419,9 +489,21 @@ p {
   top: -46px;
   right: 0;
   width: max-content;
-  padding: 15px 0 15px 30px;
-  background: #F3400A;
+  padding: 15px 30px 15px 30px;
+  background: linear-gradient(135deg, #F3400A 0%, #ff5722 100%);
   z-index: 10;
+  box-shadow: 0 8px 25px rgba(243, 64, 10, 0.4);
+  border-radius: 4px 0 0 4px;
+  animation: cashbackPulse 3s infinite ease-in-out;
+}
+
+@keyframes cashbackPulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(243, 64, 10, 0.4);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(243, 64, 10, 0.7);
+  }
 }
 
 .block_06 .cashback h5 {
@@ -438,6 +520,11 @@ p {
   font-weight: 600;
   color: #fff;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.block_06 .cashback .tel:hover {
+  color: #ffc600;
 }
 
 .block_06 .cashback h5 span::after {
@@ -455,6 +542,7 @@ p {
   line-height: 1;
   position: relative;
   top: -4px;
+  border-radius: 2px;
 }
 
 .block_06 .container2 {

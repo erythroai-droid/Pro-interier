@@ -1,0 +1,215 @@
+.floatingContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floatingContainer.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Main FAB Pulse Button */
+.mainFab {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffc600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(255, 198, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+}
+
+.mainFab:hover {
+  transform: scale(1.1);
+  background: #ffdb4d;
+}
+
+.mainFabActive {
+  background: #111;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.mainFabActive:hover {
+  background: #222;
+}
+
+.mainFabActive .fabIcon {
+  color: #fff;
+}
+
+.fabIcon {
+  font-size: 22px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.fabPulse {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #ffc600;
+  animation: ripplePulse 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
+}
+
+@keyframes ripplePulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Quick Menu */
+.quickMenu {
+  position: absolute;
+  bottom: 130px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 200px;
+  opacity: 0;
+  transform: translateY(15px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quickMenuOpen {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.quickMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.quickMenuItem:hover {
+  background: #ffc600;
+  color: #000;
+  transform: translateX(-4px);
+}
+
+.itemIcon {
+  font-size: 16px;
+}
+
+/* Scroll Top Button */
+.scrollTopBtn {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #111;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+}
+
+.scrollTopBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #1c1c1c;
+}
+
+.progressSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.circleBg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.15);
+}
+
+.circleProgress {
+  fill: none;
+  stroke: #ffc600;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.arrowUp {
+  color: #ffc600;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .floatingContainer {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .mainFab, .scrollTopBtn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .progressSvg {
+    width: 46px;
+    height: 46px;
+    viewBox: 0 0 52 52;
+  }
+
+  .quickMenu {
+    bottom: 115px;
+    right: 0;
+    min-width: 180px;
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import gsap from "gsap";
 import styles from "./Reviews.module.css";
 
 interface Testimonial {
@@ -44,7 +45,43 @@ export default function Reviews() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const activeSlide = containerRef.current.querySelector(`.${styles.slideActive}`);
+    if (activeSlide) {
+      const avatar = activeSlide.querySelector(`.${styles.avatarWrapper}`);
+      const quote = activeSlide.querySelector(`.${styles.testimonial}`);
+      const name = activeSlide.querySelector(`.${styles.name}`);
+
+      const tl = gsap.timeline();
+      if (avatar) {
+        tl.fromTo(
+          avatar,
+          { opacity: 0, scale: 0.85, x: direction === "next" ? 30 : -30 },
+          { opacity: 1, scale: 1, x: 0, duration: 0.6, ease: "back.out(1.5)" }
+        );
+      }
+      if (quote) {
+        tl.fromTo(
+          quote,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.4"
+        );
+      }
+      if (name) {
+        tl.fromTo(
+          name,
+          { opacity: 0, x: 20 },
+          { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.3"
+        );
+      }
+    }
+  }, [current, direction]);
 
   const nextSlide = useCallback(() => {
     setDirection("next");
@@ -91,6 +128,7 @@ export default function Reviews() {
 
   return (
     <div
+      ref={containerRef}
       className={styles.slideshowContainer}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -163,4 +201,3 @@ export default function Reviews() {
     </div>
   );
 }
-

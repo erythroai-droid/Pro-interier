@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
 import styles from "./Slider.module.css";
 
 interface SlideData {
@@ -115,6 +116,41 @@ export default function Slider() {
       return () => clearTimeout(timer);
     }
   }, [exiting]);
+
+  // GSAP animation for active slide text content
+  useEffect(() => {
+    const activeSlideEl = document.querySelector(`.${styles.slideActive} .${styles.slideContent}`);
+    if (activeSlideEl) {
+      const title = activeSlideEl.querySelector("h2");
+      const desc = activeSlideEl.querySelector("p");
+      const btn = activeSlideEl.querySelector(`.${styles.priceBtn}`);
+
+      const tl = gsap.timeline();
+      if (title) {
+        tl.fromTo(
+          title,
+          { opacity: 0, y: 50, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }
+        );
+      }
+      if (desc) {
+        tl.fromTo(
+          desc,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.5"
+        );
+      }
+      if (btn) {
+        tl.fromTo(
+          btn,
+          { opacity: 0, scale: 0.8 },
+          { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.7)" },
+          "-=0.4"
+        );
+      }
+    }
+  }, [current]);
 
   useEffect(() => {
     autoPlayRef.current = setInterval(nextSlide, 6000);
