@@ -14,7 +14,7 @@
   height: 80px;
   width: 200px;
   background: #FFC600 url(/img/Logo_en2.svg) no-repeat center;
-  background-size: 85%;
+  background-size: 68%;
   z-index: 9999;
   padding: 0 100px;
   flex-shrink: 0;
@@ -186,7 +186,7 @@
   width: 200px;
   height: 80px;
   background: #FFC600 url(/img/Logo_en2.svg) no-repeat center;
-  background-size: 85%;
+  background-size: 68%;
   flex-shrink: 0;
 }
 
@@ -478,7 +478,7 @@
     padding: 0;
     margin: 0;
     background-color: #FFC600;
-    background-size: auto 70%;
+    background-size: auto 56%;
   }
 
   .menuArea {
@@ -543,7 +543,7 @@
     width: 100%;
     height: 80px;
     background-color: #FFC600;
-    background-size: auto 70%;
+    background-size: auto 56%;
   }
 
   .dropdownClose {
