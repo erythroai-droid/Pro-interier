@@ -1,34 +1,23 @@
 .textContainer {
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   vertical-align: middle;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .letter {
   display: inline-block;
   will-change: transform, opacity;
-  animation: letterAnim 7s infinite;
 }
 
-/* Space character should preserve its width */
-.letterSpace {
+.space {
   display: inline-block;
-  width: 0.25em;
-}
-
-@keyframes letterAnim {
-  0% {
-    transform: translate3d(40px, 0, 0);
-    opacity: 0;
-  }
-  /* Letter slide in */
-  8%, 45% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-  /* Letter slide out */
-  53%, 100% {
-    transform: translate3d(-30px, 0, 0);
-    opacity: 0;
-  }
+  width: 0.28em;
 }
