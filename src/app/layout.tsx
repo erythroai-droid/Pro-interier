@@ -34,6 +34,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${oswald.variable} ${ptSerif.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/img/slider/room.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+          // @ts-expect-error - fetchPriority is supported in Next/React 19
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/img/slider/room-mobile.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+          // @ts-expect-error - fetchPriority is supported in Next/React 19
+          fetchpriority="high"
+        />
+      </head>
       <body>
         <ScrollAnimations />
         <Navbar />

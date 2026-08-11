@@ -34,8 +34,12 @@ export default function DiscountsPage() {
     <main>
       <div className="block_07">
         <img
-          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.jpg"
+          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.webp"
           alt="Discounts Ceiling PRO Interior Studio"
+          width={1920}
+          height={270}
+          loading="eager"
+          decoding="async"
         />
       </div>
 

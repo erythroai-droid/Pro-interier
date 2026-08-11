@@ -10,84 +10,84 @@ export default function Home() {
       description: "Matte/satin, lacquer texture, classic",
       price: "from $280/m²",
       slug: "matovye-i-glyancivye-pvh",
-      image: "/img/products/matovye-i-glyancivye.jpg",
+      image: "/img/products/matovye-i-glyancivye.webp",
     },
     {
       title: "Fabric Ceilings",
       description: "Descor polyester fabric with polyurethane. All colors",
       price: "from $960/m²",
       slug: "tkanevye-potolki",
-      image: "/img/products/tkanivye.jpg",
+      image: "/img/products/tkanivye.webp",
     },
     {
       title: "Multi-level Ceilings",
       description: "Two or more levels. Various colors and textures",
       price: "from $1,850/lin.m",
       slug: "mnogourovnevye-potolki",
-      image: "/img/products/mnogourovnivye.jpg",
+      image: "/img/products/mnogourovnivye.webp",
     },
     {
       title: "Luminous Ceiling",
       description: "Translucent ceiling with internal LED backlight",
       price: "from $6,800/m²",
       slug: "svetovye-led-potolki",
-      image: "/img/products/svetovoi.jpg",
+      image: "/img/products/svetovoi.webp",
     },
     {
       title: "Floating Ceiling",
       description: "Contour profile with soft LED wall lighting",
       price: "from $950/lin.m",
       slug: "paryashie-potolki",
-      image: "/img/products/paryashie.jpg",
+      image: "/img/products/paryashie.webp",
     },
     {
       title: "Shadow Ceiling",
       description: "Stylish shadow gap ceiling connection to wall, black profile",
       price: "from $680/lin.m",
       slug: "tenevye-potolki",
-      image: "/img/products/tenevoi.jpg",
+      image: "/img/products/tenevoi.webp",
     },
     {
       title: "Light Lines",
       description: "Lines and strips with LED lighting flush with the ceiling",
       price: "from $1,950/lin.m",
       slug: "svetovye-linii",
-      image: "/img/products/liniy.jpg",
+      image: "/img/products/liniy.webp",
     },
     {
       title: "LED Backlit Ceilings",
       description: "Lighting options with LED strips",
       price: "from $650/lin.m",
       slug: "s-podsvetkoy-led",
-      image: "/img/products/podsvetka.jpg",
+      image: "/img/products/podsvetka.webp",
     },
     {
       title: "Photo Printed Ceilings",
       description: "Drawings, images, paintings on the ceiling",
       price: "from $1,850/m²",
       slug: "fotopechat-na-potolke",
-      image: "/img/products/fotopechaty.jpg",
+      image: "/img/products/fotopechaty.webp",
     },
     {
       title: "3D Stretch Ceiling",
       description: "Ceiling with 3D volume, LED backlight, photo printing",
       price: "from $2,200/m²",
       slug: "3d-potolki",
-      image: "/img/products/3D.jpg",
+      image: "/img/products/3D.webp",
     },
     {
       title: "Sky Ceiling",
       description: "Stretch ceiling with Sky & Clouds photo printing, options",
       price: "from $1,850/m²",
       slug: "nebo-s-oblakami",
-      image: "/img/products/nebo.jpg",
+      image: "/img/products/nebo.webp",
     },
     {
       title: "Soundproofing Under Stretch Ceiling",
       description: "Comprehensive noise protection from upstairs neighbors",
       price: "from $1,400/m²",
       slug: "shumoizolyaciya-potolka",
-      image: "/img/products/zvukoizolyazia.jpg",
+      image: "/img/products/zvukoizolyazia.webp",
     },
   ];
 
@@ -106,8 +106,12 @@ export default function Home() {
           <div className="page_content">
             <img 
               className="page_image" 
-              src="/img/room2.png" 
+              src="/img/room2.webp" 
               alt="Stretch ceilings in the interior" 
+              width={540}
+              height={360}
+              loading="lazy"
+              decoding="async"
             />
             <p>
               PVC stretch ceilings, in matte, glossy, or fabric textures, have firmly established themselves in the concept of modern ceiling finishes. You can buy or order stretch ceiling installation from us at an affordable price, officially, and with a warranty.
@@ -131,13 +135,34 @@ export default function Home() {
             </Link>
           </div>
           <div className="img">
-            <img src="/img/1574075992_nisha-dlya-shtor.jpg" alt="Curtain Niche" />
+            <img 
+              src="/img/1574075992_nisha-dlya-shtor.webp" 
+              alt="Curtain Niche" 
+              width={270}
+              height={150}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="img">
-            <img src="/img/1574075928_shtory-nisha.png" alt="Curtains in niche" />
+            <img 
+              src="/img/1574075928_shtory-nisha.webp" 
+              alt="Curtains in niche" 
+              width={270}
+              height={150}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="img hit">
-            <img src="/img/1574076126_nishi-dlya-shtory.jpg" alt="Curtain Niche Best Choice" />
+            <img 
+              src="/img/1574076126_nishi-dlya-shtory.webp" 
+              alt="Curtain Niche Best Choice" 
+              width={270}
+              height={150}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -215,13 +240,21 @@ export default function Home() {
             <div className="studio_images">
               <img 
                 className="studio_image" 
-                src="/img/1-натяжной-потолок-в-квартиру.jpg" 
+                src="/img/1-натяжной-потолок-в-квартиру.webp" 
                 alt="Stretch ceiling in apartment" 
+                width={350}
+                height={220}
+                loading="lazy"
+                decoding="async"
               />
               <img 
                 className="studio_image" 
-                src="/img/3-спальня.jpg" 
+                src="/img/3-спальня.webp" 
                 alt="Stretch ceiling in bedroom" 
+                width={350}
+                height={220}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

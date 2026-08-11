@@ -11,8 +11,12 @@ export default function AboutPage() {
     <main>
       <div className="block_07">
         <img
-          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.jpg"
+          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.webp"
           alt="About Ceiling PRO Interior Studio"
+          width={1920}
+          height={270}
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -32,8 +36,12 @@ export default function AboutPage() {
             <div className="page_content">
               <img
                 className="right_30 left bottom_15"
-                src="/img/1-натяжной-потолок-в-квартиру.jpg"
+                src="/img/1-натяжной-потолок-в-квартиру.webp"
                 alt="About us"
+                width={320}
+                height={220}
+                loading="lazy"
+                decoding="async"
                 style={{ maxWidth: "320px", width: "100%", height: "auto", float: "left", borderRadius: "4px" }}
               />
               <p style={{ textAlign: "justify" }}>

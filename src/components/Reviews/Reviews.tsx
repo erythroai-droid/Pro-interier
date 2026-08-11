@@ -18,14 +18,14 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    image: "/img/testimonials/Kai.png",
+    image: "/img/testimonials/Kai.webp",
     text: "Thank you to the studio for the excellent work. Recommended!",
     nameFirst: "Kai",
     nameLast: "Metov",
   },
   {
     id: 2,
-    image: "/img/testimonials/Konchlovsky.png",
+    image: "/img/testimonials/Konchlovsky.webp",
     text: "It turned out cozy and bright! Thank you for your work!",
     nameFirst: "Andrey",
     nameLast: "Konchalovsky",
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    image: "/img/testimonials/Nikolaev.png",
+    image: "/img/testimonials/Nikolaev.webp",
     text: "Thank you for the high-quality work, liked everything!",
     nameFirst: "Valery",
     nameLast: "Nikolaev",
@@ -149,7 +149,14 @@ export default function Reviews() {
               <div className={styles.inner}>
                 {/* Photo */}
                 <div className={styles.avatarWrapper}>
-                  <img src={item.image} alt={`${item.nameFirst} ${item.nameLast}`} />
+                  <img 
+                    src={item.image} 
+                    alt={`${item.nameFirst} ${item.nameLast}`} 
+                    width={480}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 {/* Testimonial Text */}
                 <div className={styles.textBlock}>

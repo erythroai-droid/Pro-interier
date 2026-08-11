@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 const works = [
-  { img: "/img/1-натяжной-потолок-в-квартиру.jpg", title: "Living room with matte PVC and light lines" },
-  { img: "/img/2-кухня.jpg", title: "Kitchen glossy stretch ceiling with spotlights" },
-  { img: "/img/3-спальня.jpg", title: "Bedroom fabric Descor ceiling with contour lighting" },
-  { img: "/img/4-ванна.jpg", title: "Bathroom moisture-proof stretch ceiling" },
-  { img: "/img/Многоуровневые-потолки.jpg", title: "Multi-level ceiling with LED illumination" },
-  { img: "/img/световые линии 3.jpg", title: "Modern geometric light lines" },
+  { img: "/img/1-натяжной-потолок-в-квартиру.webp", title: "Living room with matte PVC and light lines" },
+  { img: "/img/2-кухня.webp", title: "Kitchen glossy stretch ceiling with spotlights" },
+  { img: "/img/3-спальня.webp", title: "Bedroom fabric Descor ceiling with contour lighting" },
+  { img: "/img/4-ванна.webp", title: "Bathroom moisture-proof stretch ceiling" },
+  { img: "/img/Многоуровневые-потолки.webp", title: "Multi-level ceiling with LED illumination" },
+  { img: "/img/световые линии 3.webp", title: "Modern geometric light lines" },
 ];
 
 export default function PortfolioPage() {
@@ -20,8 +20,12 @@ export default function PortfolioPage() {
     <main>
       <div className="block_07">
         <img
-          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.jpg"
+          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.webp"
           alt="Portfolio Ceiling PRO Interior Studio"
+          width={1920}
+          height={270}
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -49,6 +53,10 @@ export default function PortfolioPage() {
                     <img
                       src={item.img}
                       alt={item.title}
+                      width={380}
+                      height={200}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: "100%", height: "200px", objectFit: "cover", display: "block" }}
                     />
                     <div style={{ padding: "12px 16px", fontSize: "14px", fontWeight: "bold", color: "#333" }}>

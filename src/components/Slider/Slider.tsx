@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     id: 1,
     title: "Apartment",
     description: "Studio stretch ceiling white matte PVC",
-    image: "/img/slider/room.jpg",
+    image: "/img/slider/room.webp",
     price: "from $23,800",
     slug: "v-kvartire",
     orientation: "horizontal",
@@ -37,7 +37,7 @@ const slides: SlideData[] = [
     id: 2,
     title: "Kitchen",
     description: "Stretch ceiling PVC matte white",
-    image: "/img/slider/kitchen.jpg",
+    image: "/img/slider/kitchen.webp",
     price: "from $9,600",
     slug: "v-kuhne",
     orientation: "vertical",
@@ -50,7 +50,7 @@ const slides: SlideData[] = [
     id: 3,
     title: "Bedroom",
     description: "Stretch ceiling fabric Descor white",
-    image: "/img/slider/badroom.jpg",
+    image: "/img/slider/badroom.webp",
     price: "from $16,400",
     slug: "tkanevye-potolki",
     orientation: "horizontal",
@@ -63,7 +63,7 @@ const slides: SlideData[] = [
     id: 4,
     title: "Bathroom",
     description: "Stretch ceiling PVC matte white",
-    image: "/img/slider/bathroom.jpg",
+    image: "/img/slider/bathroom.webp",
     price: "from $7,800",
     slug: "v-vanne",
     orientation: "vertical",
@@ -76,7 +76,7 @@ const slides: SlideData[] = [
     id: 5,
     title: "Living Room",
     description: "Stretch ceiling PVC matte white",
-    image: "/img/slider/livingroom.jpg",
+    image: "/img/slider/livingroom.webp",
     price: "from $13,700",
     slug: "v-kvartire",
     orientation: "horizontal",
@@ -221,14 +221,14 @@ export default function Slider() {
             <div
               className={`${styles.bgSlice} ${isHorizontal ? styles.sliceTop : styles.sliceLeft}`}
               style={{ 
-                backgroundImage: `url(${slide.image})`,
+                backgroundImage: `image-set(url("${slide.image.replace('.webp', '-mobile.webp')}") 1x, url("${slide.image}") 2x)`,
                 ...slice1Style
               }}
             />
             <div
               className={`${styles.bgSlice} ${isHorizontal ? styles.sliceBottom : styles.sliceRight}`}
               style={{ 
-                backgroundImage: `url(${slide.image})`,
+                backgroundImage: `image-set(url("${slide.image.replace('.webp', '-mobile.webp')}") 1x, url("${slide.image}") 2x)`,
                 ...slice2Style
               }}
             />

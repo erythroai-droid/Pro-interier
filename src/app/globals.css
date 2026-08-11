@@ -224,7 +224,7 @@ p {
 
 .block_02 .hit::before {
   content: '';
-  background: url(/img/hit.png) no-repeat;
+  background: url(/img/hit.webp) no-repeat;
   display: block;
   width: 113px;
   height: 61px;
@@ -416,7 +416,7 @@ p {
 
 /* Блок 04 - Наша студия */
 .block_04 {
-  background: #fff url(/img/bg_03.jpg) no-repeat center;
+  background: #fff url(/img/bg_03.webp) no-repeat center;
   background-size: cover;
   width: 100%;
   padding: 70px 0;

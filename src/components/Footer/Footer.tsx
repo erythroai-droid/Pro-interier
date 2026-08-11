@@ -85,9 +85,9 @@ export default function Footer() {
         {/* Payment and Social links */}
         <div className="payment-social">
           <div className="payment">
-            <img src="/img/sber.svg" alt="Sberbank" />
-            <img src="/img/la_cc-visa.svg" alt="Visa" />
-            <img src="/img/icons8_mastercard.svg" alt="Mastercard" />
+            <img src="/img/sber.svg" alt="Sberbank" width={80} height={24} loading="lazy" decoding="async" />
+            <img src="/img/la_cc-visa.svg" alt="Visa" width={60} height={24} loading="lazy" decoding="async" />
+            <img src="/img/icons8_mastercard.svg" alt="Mastercard" width={40} height={24} loading="lazy" decoding="async" />
           </div>
           <div className="social">
             <a href="#" className="fb" aria-label="Facebook" />

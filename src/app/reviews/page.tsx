@@ -10,19 +10,19 @@ const fullReviews = [
   {
     name: "Kai Metov",
     role: "Pop Singer & Composer",
-    image: "/img/testimonials/Kai.png",
+    image: "/img/testimonials/Kai.webp",
     text: "Thank you to the Ceiling Pro_interier studio for the excellent work! The installation in the studio apartment was completed in 3 hours. Everything is neat, clean, and looks fantastic. Highly recommended!",
   },
   {
     name: "Andrey Konchalovsky & Yulia Vysotskaya",
     role: "Film Director & Actress",
-    image: "/img/testimonials/Konchlovsky.png",
+    image: "/img/testimonials/Konchlovsky.webp",
     text: "It turned out cozy and bright! Thank you very much for your great craftsmanship and attention to detail. We are delighted with the result!",
   },
   {
     name: "Valery Nikolaev",
     role: "Actor & Director",
-    image: "/img/testimonials/Nikolaev.png",
+    image: "/img/testimonials/Nikolaev.webp",
     text: "Thank you for the high-quality work, liked everything! The light lines and shadow gap look incredible. True professionals in their field.",
   },
 ];
@@ -32,8 +32,12 @@ export default function ReviewsPage() {
     <main>
       <div className="block_07">
         <img
-          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.jpg"
+          src="/img/e0b0a3f5291c6d76f2e48e99bb5d0495.webp"
           alt="Reviews Ceiling PRO Interior Studio"
+          width={1920}
+          height={270}
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -68,6 +72,10 @@ export default function ReviewsPage() {
                     <img
                       src={r.image}
                       alt={r.name}
+                      width={90}
+                      height={90}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: "90px", height: "90px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
                     />
                     <div>
