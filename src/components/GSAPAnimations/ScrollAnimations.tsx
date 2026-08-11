@@ -24,7 +24,7 @@ export default function ScrollAnimations() {
         if (number) {
           gsap.fromTo(
             number,
-            { opacity: 0, x: -60, filter: "blur(4px)" },
+            { opacity: 0, x: -30, filter: "blur(4px)" },
             {
               opacity: 1,
               x: 0,

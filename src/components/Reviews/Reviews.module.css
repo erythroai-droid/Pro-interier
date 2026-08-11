@@ -9,6 +9,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .slide {
@@ -21,6 +23,8 @@
   justify-content: flex-end;
   height: 100%;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   transition: 
     opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1),
     transform 0.65s cubic-bezier(0.25, 1, 0.5, 1),
