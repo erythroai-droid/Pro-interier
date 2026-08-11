@@ -321,11 +321,23 @@ p {
   transform: translateY(0);
 }
 
+.productCard h3,
+.productCard h4,
 .productCard h5,
+.productCard .cloud h3,
+.productCard .cloud h4,
 .productCard .cloud h5,
+.cloud h3,
+.cloud h4,
 .cloud h5,
+.block_03 h3,
+.block_03 h4,
 .block_03 h5,
+.block_03 .productCard h3,
+.block_03 .productCard h4,
 .block_03 .productCard h5,
+.block_03 .cloud h3,
+.block_03 .cloud h4,
 .block_03 .cloud h5 {
   font-family: var(--font-oswald);
   font-size: 26px;
