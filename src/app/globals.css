@@ -18,16 +18,14 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
 main {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Сетки и контейнеры */
