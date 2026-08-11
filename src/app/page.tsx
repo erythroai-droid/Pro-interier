@@ -185,7 +185,7 @@ export default function Home() {
               style={{ backgroundImage: `url(${prod.image})` }}
             >
               <div className="cloud">
-                <h5>{prod.title}</h5>
+                <h4>{prod.title}</h4>
                 <div className="description">{prod.description}</div>
                 <div className="price">{prod.price}</div>
                 <Link href={`/ceilings/${prod.slug}`} className="more">
@@ -210,7 +210,7 @@ export default function Home() {
               style={{ backgroundImage: `url(${prod.image})` }}
             >
               <div className="cloud">
-                <h5>{prod.title}</h5>
+                <h4>{prod.title}</h4>
                 <div className="description">{prod.description}</div>
                 <div className="price">{prod.price}</div>
                 <Link href={`/ceilings/${prod.slug}`} className="more">

@@ -26,7 +26,7 @@
 }
 
 .kind {
-  background: #F3400A;
+  background: #d83402;
   display: flex;
   align-items: center;
   height: 80px;
@@ -34,9 +34,10 @@
   padding: 0 50px 0 30px;
   white-space: nowrap;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 .openIcon {

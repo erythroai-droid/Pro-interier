@@ -145,6 +145,7 @@ export default function Reviews() {
                 isActive ? styles.slideActive : ""
               } ${direction === "next" ? styles.slideNext : styles.slidePrev}`}
               aria-hidden={!isActive}
+              inert={!isActive ? true : undefined}
             >
               <div className={styles.inner}>
                 {/* Photo */}
@@ -171,7 +172,11 @@ export default function Reviews() {
                     )}
                   </p>
                   <p className={`${styles.alignRight} bottom_50`}>
-                    <Link href="/reviews" className="underline">
+                    <Link 
+                      href="/reviews" 
+                      className="underline"
+                      tabIndex={isActive ? 0 : -1}
+                    >
                       details
                     </Link>
                   </p>

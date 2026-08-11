@@ -40,11 +40,11 @@ export default function Footer() {
     <footer className="block_06">
       {/* Cashback badge */}
       <div className="cashback">
-        <h5>
+        <div className="cashback_title">
           <span>CASHBACK ON CARD UP TO 10%</span> <br />
           <a className="tel" href="tel:+74955067244">8(495) 506-7244</a>,{" "}
           <a className="tel" href="tel:+79163532070">8(916) 353-2070</a>
-        </h5>
+        </div>
       </div>
 
       <div className="container">

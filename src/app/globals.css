@@ -324,8 +324,13 @@ p {
 .block_03 h5 {
   color: #ffffff;
   font-size: 26px;
-  line-height: 1.2;
-  margin-bottom: 10px;
+  font-family: var(--font-oswald);
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 28px;
+  margin-bottom: 8px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
@@ -521,6 +526,7 @@ p {
   }
 }
 
+.block_06 .cashback .cashback_title,
 .block_06 .cashback h5 {
   font-family: var(--font-oswald), sans-serif;
   font-size: 24px;
@@ -542,6 +548,7 @@ p {
   color: #ffc600;
 }
 
+.block_06 .cashback .cashback_title span::after,
 .block_06 .cashback h5 span::after {
   content: 'Call us!';
   font-family: var(--font-oswald);
@@ -776,6 +783,7 @@ span.number::after {
     z-index: 50;
   }
   
+  .block_06 .cashback .cashback_title,
   .block_06 .cashback h5 {
     font-size: 14px;
     line-height: 1.3;
@@ -783,6 +791,7 @@ span.number::after {
     color: #fff;
   }
   
+  .block_06 .cashback .cashback_title span::after,
   .block_06 .cashback h5 span::after {
     font-size: 12px;
     padding: 2px 8px;

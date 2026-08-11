@@ -216,6 +216,8 @@ export default function Slider() {
           <div
             key={slide.id}
             className={`${styles.slide} ${isActive ? styles.slideActive : ""} ${isExiting ? styles.slideExiting : ""}`}
+            aria-hidden={!isActive}
+            inert={!isActive ? true : undefined}
           >
             {/* 3D split of background image */}
             <div
@@ -239,7 +241,11 @@ export default function Slider() {
               <p>{slide.description}</p>
               
               {/* Central price button */}
-              <Link href={`/ceilings/${slide.slug}`} className={styles.priceBtn}>
+              <Link 
+                href={`/ceilings/${slide.slug}`} 
+                className={styles.priceBtn}
+                tabIndex={isActive ? 0 : -1}
+              >
                 <span className={styles.priceText}>{slide.price}</span>
                 <span className={styles.hoverText}>DETAILS</span>
               </Link>
