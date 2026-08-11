@@ -482,7 +482,7 @@ p {
   padding: 100px 0 70px 0;
   position: relative;
   color: #ffffff;
-  overflow: hidden;
+  z-index: 20;
 }
 
 .block_06::before {
@@ -495,8 +495,10 @@ p {
   text-transform: uppercase;
   color: #fff;
   opacity: 0.05;
-  left: -80px;
+  left: 20px;
   top: 150px;
+  pointer-events: none;
+  user-select: none;
 }
 
 .block_06 .cashback {
@@ -506,7 +508,7 @@ p {
   width: max-content;
   padding: 15px 30px 15px 30px;
   background: linear-gradient(135deg, #F3400A 0%, #ff5722 100%);
-  z-index: 10;
+  z-index: 50;
   box-shadow: 0 8px 25px rgba(243, 64, 10, 0.4);
   border-radius: 4px 0 0 4px;
   animation: cashbackPulse 3s infinite ease-in-out;
@@ -757,6 +759,10 @@ span.number::after {
   .block_06 .container2 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .block_06::before {
+    display: none;
+  }
   
   .block_06 .cashback {
     position: absolute;
@@ -769,7 +775,7 @@ span.number::after {
     background: #F3400A;
     text-align: left;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 50;
   }
   
   .block_06 .cashback h5 {
