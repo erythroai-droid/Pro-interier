@@ -1,13 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ScrollAnimations() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Register GSAP ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
+
+    const cleanupFns: (() => void)[] = [];
 
     const ctx = gsap.context(() => {
       // 1. Number Headers Animation (.number_header)
@@ -147,8 +152,9 @@ export default function ScrollAnimations() {
       }
 
       // 4. Block 03 - Product Catalog Cards
+      const productsContainer = document.querySelector(".block_03 .products");
       const productCards = gsap.utils.toArray<HTMLElement>(".block_03 .productCard");
-      if (productCards.length > 0) {
+      if (productsContainer && productCards.length > 0) {
         gsap.fromTo(
           productCards,
           { opacity: 0, y: 60, scale: 0.95 },
@@ -163,7 +169,7 @@ export default function ScrollAnimations() {
             },
             ease: "power3.out",
             scrollTrigger: {
-              trigger: ".block_03 .products",
+              trigger: productsContainer,
               start: "top 85%",
               toggleActions: "play none none reverse",
             },
@@ -203,6 +209,10 @@ export default function ScrollAnimations() {
 
           card.addEventListener("mousemove", handleMouseMove);
           card.addEventListener("mouseleave", handleMouseLeave);
+          cleanupFns.push(() => {
+            card.removeEventListener("mousemove", handleMouseMove);
+            card.removeEventListener("mouseleave", handleMouseLeave);
+          });
         });
       }
 
@@ -383,9 +393,10 @@ export default function ScrollAnimations() {
     });
 
     return () => {
+      cleanupFns.forEach((fn) => fn());
       ctx.revert();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -79,7 +79,7 @@ export default async function CeilingPage({ params }: PageProps) {
               <p style={{ textAlign: "justify" }}>
                 {data.content}
                 <br /><br />
-                Stretch Ceiling Studio 'Ceiling PRO Interior' guarantees high-quality execution of all stages of work: from free professional measurement to installation of ceilings of any complexity. In our work we use only certified canvases from proven European and domestic manufacturers, modern profile systems, and explosion-safe composite equipment.
+                Stretch Ceiling Studio &apos;Ceiling PRO Interior&apos; guarantees high-quality execution of all stages of work: from free professional measurement to installation of ceilings of any complexity. In our work we use only certified canvases from proven European and domestic manufacturers, modern profile systems, and explosion-safe composite equipment.
                 <br /><br />
                 Installation of stretch ceilings is fast, clean, and within the agreed timeline. We value our reputation, which is why we provide an official warranty on all types of materials and installation work. Contact us right now to get an exact calculation of your ceiling cost and order a free visit from our measurement engineer.
               </p>

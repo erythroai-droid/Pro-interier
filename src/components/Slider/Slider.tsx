@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import styles from "./Slider.module.css";
@@ -93,19 +93,19 @@ export default function Slider() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setExiting(current);
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+  }, [current, isTransitioning]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setExiting(current);
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+  }, [current, isTransitioning]);
 
   useEffect(() => {
     if (exiting !== null) {
@@ -157,7 +157,7 @@ export default function Slider() {
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, [current, isTransitioning]);
+  }, [nextSlide]);
 
   const resetAutoPlay = () => {
     if (autoPlayRef.current) {

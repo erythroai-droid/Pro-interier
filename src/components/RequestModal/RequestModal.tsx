@@ -56,14 +56,6 @@ export default function RequestModal({ isOpen, onClose }: RequestModalProps) {
       return;
     }
     setError("");
-    
-    // Simulate API request
-    console.log("Submit request:", {
-      type: "Callback Request",
-      name,
-      phone,
-    });
-    
     setIsSubmitted(true);
   };
 

@@ -77,18 +77,6 @@ export default function CalculatorModal({ isOpen, onClose }: CalculatorModalProp
       return;
     }
     setError("");
-    
-    // Simulate API request
-    console.log("Submit request:", {
-      type: "Calculator Request",
-      area: areaNum,
-      hasShadow,
-      fixtures: fixturesNum,
-      estimatedPrice: totalPrice,
-      name,
-      phone,
-    });
-    
     setIsSubmitted(true);
   };
 
@@ -235,7 +223,7 @@ export default function CalculatorModal({ isOpen, onClose }: CalculatorModalProp
                 </button>
 
                 <div className={styles.leadFootnotes}>
-                  <span>— We'll call back in 15 minutes</span>
+                  <span>— We&apos;ll call back in 15 minutes</span>
                   <span>— Help with extra services calculation</span>
                 </div>
               </div>
